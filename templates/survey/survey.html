@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <div class="hero">
+        <h2>설문</h2>
+        <p>설문 내용</p>
+        <a href="{% url 'classification:index' %}"><button>제출하기</button></a>
+    </div>    
+</div>
+{% endblock %}
