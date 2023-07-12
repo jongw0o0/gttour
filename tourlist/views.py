@@ -7,11 +7,11 @@ from django.shortcuts import render
 # def index(request):
 #     return render(request, 'tourlist/tourlist1.html')
 
-def index1(request):
+def indexone(request):
     return render(request, 'tourlist/tourlist1.html')
 
-def index2(request):
+def indextwo(request):
     return render(request, 'tourlist/tourlist2.html')
 
-def index3(request):
+def indexthree(request):
     return render(request, 'tourlist/tourlist3.html')
