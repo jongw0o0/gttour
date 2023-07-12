@@ -2,8 +2,20 @@
 {% block content %}
 <div class="container">
     <div class="hero">
-        <h2>분류 기준</h2>
-        <p>...</p>
+        <p><a href="{% url 'tourlist:index1' %}"><button type="submit"><h3>통합</h3></button></a>
+        <li>관광지 리스트1</li>
+        <li>관광지 리스트2</li>
+        <li>관광지 리스트3</li></p>
+        <p><a href="{% url 'tourlist:index2' %}"><button type="submit"><h3>관심 장소</h3></button></a>
+        <li>관광지 리스트1</li>
+        <li>관광지 리스트2</li>
+        <li>관광지 리스트3</li></p>
+        <p><a href="{% url 'tourlist:index3' %}"><button type="submit"><h3>특징</h3></button></a>
+        <li>관광지 리스트1</li>
+        <li>관광지 리스트2</li>
+        <li>관광지 리스트3</li></p>
     </div>    
 </div>
 {% endblock %}
+
+<!-- <a href="{% url 'classification:index' %}"><button type="submit">제출하기</button></a> -->

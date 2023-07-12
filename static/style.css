@@ -24,14 +24,14 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.container .hero2{
+/* .container .hero2{
     position: absolute;
     left: 50%;
     top: 50%;
     transform: translate(-80%, -50%);
     text-align: center;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
+} */
 
 .container .hero h2{
     font-size: 60px;

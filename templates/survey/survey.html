@@ -2,7 +2,8 @@
 {% block content %}
 <div class="container">
     <div class="hero">
-        <h3>설문</h3>
+        <br>
+        <p><h3>설문</h3></p>
         <li>성별</li>
         <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
@@ -13,30 +14,115 @@
             <label class="form-check-label" for="inlineRadio2">여</label>
           </div>
         <li>연령대</li>  
-        <select class="form-select" aria-label="Default select example">
-            <option selected>Open this select menu</option>
-            <option value="1">10대</option>
-            <option value="2">20대</option>
-            <option value="3">30대</option>
-            <option value="4">40대</option>
-            <option value="5">50대</option>
-            <option value="6">60대 이상</option>
-        </select>
-        <li>관심 지역</li>
-        <select class="form-select" aria-label="Default select example">
-            <option selected>Open this select menu</option>
+        <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1">
+            <label class="form-check-label" for="inlineRadio1">10대</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio2">20대</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+            <label class="form-check-label" for="inlineRadio3">30대</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio4" value="option4">
+            <label class="form-check-label" for="inlineRadio4">40대</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio5" value="option5">
+            <label class="form-check-label" for="inlineRadio5">50대</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio6" value="option6">
+            <label class="form-check-label" for="inlineRadio6">60대 이상</label>
+          </div>
+        <li>관심 지역1</li>
+        <select class="form-select_1" aria-label="Default select example">
+            <option selected>시도</option>
             <option value="1">서울특별시</option>
             <option value="2">경기도</option>
             <option value="2">인천광역시</option>
             <option value="2">강원도</option>
         </select>
-        <select class="form-select" aria-label="Default select example">
-            <option selected>Open this select menu</option>
+        <select class="form-select_1" aria-label="Default select example">
+            <option selected>시군구</option>
             <option value="1">강남구</option>
             <option value="2">성동구</option>
             <option value="3">종로구</option>
         </select>
-        <a href="{% url 'classification:index' %}"><button>제출하기</button></a>
+        <li>관심 지역2</li>
+        <select class="form-select_1" aria-label="Default select example">
+            <option selected>시도</option>
+            <option value="1">서울특별시</option>
+            <option value="2">경기도</option>
+            <option value="2">인천광역시</option>
+            <option value="2">강원도</option>
+        </select>
+        <select class="form-select_1" aria-label="Default select example">
+            <option selected>시군구</option>
+            <option value="1">강남구</option>
+            <option value="2">성동구</option>
+            <option value="3">종로구</option>
+        </select>
+        <li>관심 지역3</li>
+        <select class="form-select_1" aria-label="Default select example">
+            <option selected>시도</option>
+            <option value="1">서울특별시</option>
+            <option value="2">경기도</option>
+            <option value="2">인천광역시</option>
+            <option value="2">강원도</option>
+        </select>
+        <select class="form-select_1" aria-label="Default select example">
+            <option selected>시군구</option>
+            <option value="1">강남구</option>
+            <option value="2">성동구</option>
+            <option value="3">종로구</option>
+        </select>
+        <li>나의 여행지1</li>
+        <select class="form-select_1" aria-label="Default select example">
+            <option selected>시도</option>
+            <option value="1">서울특별시</option>
+            <option value="2">경기도</option>
+            <option value="2">인천광역시</option>
+            <option value="2">강원도</option>
+        </select>
+        <select class="form-select_1" aria-label="Default select example">
+            <option selected>시군구</option>
+            <option value="1">강남구</option>
+            <option value="2">성동구</option>
+            <option value="3">종로구</option>
+        </select>
+        <li>나의 여행지2</li>
+        <select class="form-select_1" aria-label="Default select example">
+            <option selected>시도</option>
+            <option value="1">서울특별시</option>
+            <option value="2">경기도</option>
+            <option value="2">인천광역시</option>
+            <option value="2">강원도</option>
+        </select>
+        <select class="form-select_1" aria-label="Default select example">
+            <option selected>시군구</option>
+            <option value="1">강남구</option>
+            <option value="2">성동구</option>
+            <option value="3">종로구</option>
+        </select><br>
+        <li>나의 여행지3</li>
+        <select class="form-select_1" aria-label="Default select example">
+            <option selected>시도</option>
+            <option value="1">서울특별시</option>
+            <option value="2">경기도</option>
+            <option value="2">인천광역시</option>
+            <option value="2">강원도</option>
+        </select>
+        <select class="form-select_1" aria-label="Default select example">
+            <option selected>시군구</option>
+            <option value="1">강남구</option>
+            <option value="2">성동구</option>
+            <option value="3">종로구</option>
+        </select><br>
+        <a href="{% url 'classification:index' %}"><button type="submit">제출하기</button></a>
     </div>    
 </div>
 {% endblock %}
