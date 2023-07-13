@@ -39,13 +39,13 @@
 }
 
 .container .hero p{
-    font-size: 22px;
+    font-size: 25px;
 }
 
 .container .hero button{
     background: none;
-    border: 2px solid navy;
-    color: white;
+    border: 2px solid skyblue;
+    color: black;
     padding: 15px 20px;
     border-radius: 20px;
     margin-top: 30px;
@@ -55,7 +55,7 @@
 }
 
 .container .hero button:hover{
-    background-color: navy;
+    background-color: skyblue;
 }
 
 /* textarea {

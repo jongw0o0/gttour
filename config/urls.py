@@ -26,7 +26,7 @@ urlpatterns = [
     path('survey/', include('survey.urls')),
     path('classification/', include('classification.urls')),
     path('tourlist/', include('tourlist.urls')),
-    path('tourlist/index1/', include('tourlist.urls')),
-    path('tourlist/index2/', include('tourlist.urls')),
-    path('tourlist/index3/', include('tourlist.urls')),
+    # path('tourlist/index1/', include('tourlist.urls')),
+    # path('tourlist/index2/', include('tourlist.urls')),
+    # path('tourlist/index3/', include('tourlist.urls')),
 ]
