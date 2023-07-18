@@ -10,6 +10,27 @@
     <!-- gttour CSS -->
     <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
     <title>3조 투어</title>
+    <script>
+        function addressKindChange(e) {
+            var seoul = ["강남","홍대","영등포"];
+            var gyeonggi = ["수원","평택"];
+            var chungcheongnam = ["천안","세종"];
+            var target = document.getElementById("addressKindD")
+    
+            if (e.value == "a") var d = seoul;
+            else if (e.value == "b") var d = gyeonggi;
+            else if (e.value == "c") var d = chungcheongnam;
+    
+            target.options.length = 0;
+    
+            for (x in d) {
+                var opt = document.createElement("option");
+                opt.value = d[x];
+                opt.innerHTML = d[x];
+                target.appendChild(opt);
+            }
+        }
+    </script>
 </head>
 <body>
 <!-- 네비게이션바 -->

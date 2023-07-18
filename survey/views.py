@@ -40,8 +40,8 @@ def index(request):
             survey_instance.regionsave()
             survey_instance.save() 
             
-            # return redirect('http://127.0.0.1:8000/classification/')  # 저장 후 리다이렉트할 URL(로컬)
-            return redirect('http://52.78.46.115/classification/')  # 저장 후 리다이렉트할 URL(서버)  
+            return redirect('http://127.0.0.1:8000/classification/')  # 저장 후 리다이렉트할 URL(로컬)
+            # return redirect('http://52.78.46.115/classification/')  # 저장 후 리다이렉트할 URL(서버)  
     else:
         form = SurveyForm()
     
