@@ -44,7 +44,7 @@
 
 .container .hero button{
     background: none;
-    border: 2px solid #e3f2fd;;
+    border: 2px solid #e3f2fd;
     color: black;
     padding: 15px 20px;
     border-radius: 20px;
@@ -55,7 +55,7 @@
 }
 
 .container .hero button:hover{
-    background-color: #e3f2fd;;
+    background-color: #e3f2fd;
 }
 
 /* textarea {

@@ -3,7 +3,7 @@
 <div class="container">
     <div class="hero">
         <h3>설문</h3>
-        <form method="post" action="{% url 'survey:index' %}">
+        <form method="post" action="{% url 'gttour:survey_view' %}">
             {% csrf_token %}
             <ul>
                 <li>성별</li>
@@ -86,8 +86,7 @@
                     <option value="성동구">성동구</option>
                     <option value="종로구">종로구</option>
                 </select>
-                <!-- select 조건 -->
-                <!-- <li>관심 지역 1</li>    
+                <li>관심 지역 1</li>    
                 <div class="form-group col-sm-5">
                     <label for="addressKindu">도/특별시 선택</label>
                     <select class="form-control" id="addressKindU" name="addressKindU" onchange="addressKindChange(this)">
@@ -102,39 +101,15 @@
                     <select class="form-control" id="addressKindD" name="addressKindD">
                     <option>선택해주세요.</option>
                     </select>
-                </div> -->
-
-                <!-- <script>
-                    function updateSecondSelect() {
-                        var firstSelect = document.getElementById("firstSelect");
-                        var secondSelect = document.getElementById("secondSelect");
-            
-                        // 기존에 있는 옵션 제거
-                        secondSelect.innerHTML = "";
-            
-                        // 첫 번째 select의 선택에 따라 두 번째 select의 옵션을 추가
-                        if (firstSelect.value === "option1") {
-                            var option1 = document.createElement("option");
-                            option1.text = "Option 1-1";
-                            secondSelect.add(option1);
-            
-                            var option2 = document.createElement("option");
-                            option2.text = "Option 1-2";
-                            secondSelect.add(option2);
-                        } else if (firstSelect.value === "option2") {
-                            var option3 = document.createElement("option");
-                            option3.text = "Option 2-1";
-                            secondSelect.add(option3);
-            
-                            var option4 = document.createElement("option");
-                            option4.text = "Option 2-2";
-                            secondSelect.add(option4);
-                        }
-                    }
-                </script> -->
+                </div>
             </ul>
-            <a href="{% url 'classification:index' %}"><button type="submit">제출하기</button></a>
+            <button type="submit">제출하기</button>
         </form>
     </div>
 </div>
 {% endblock %}
+
+<!-- <h1>{{ question.subject }}</h1>
+<div>
+    {{ question.content }}
+</div> -->
