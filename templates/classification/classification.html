@@ -1,25 +1,26 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container">
-    <div class="hero">
-        <div style="width:200px; height:150px; border:1px solid #e3f2fd; float:left; margin-right:20px;"><a href="{% url 'tourlist:index1' %}"><button type="submit"><h3>통합</h3></button></a>
-        <li>관광지 리스트1</li>
-        <li>관광지 리스트2</li>
-        <li>관광지 리스트3</li>
-        <li>관광지 리스트4</li>
-        <li>관광지 리스트5</li></p></div>
-        <div style="width:200px; height:150px; border:1px solid #e3f2fd; float:left; margin-right:20px;"><p><a href="{% url 'tourlist:index2' %}"><button type="submit"><h3>관심 장소</h3></button></a>
-        <li>관광지 리스트1</li>
-        <li>관광지 리스트2</li>
-        <li>관광지 리스트3</li>
-        <li>관광지 리스트4</li>
-        <li>관광지 리스트5</li></p></div>
-        <div style="width:200px; height:150px; border:1px solid #e3f2fd; float:left; margin-right:20px;"><p><a href="{% url 'tourlist:index3' %}"><button type="submit"><h3>특징</h3></button></a>
-        <li>관광지 리스트1</li>
-        <li>관광지 리스트2</li>
-        <li>관광지 리스트3</li>
-        <li>관광지 리스트4</li>
-        <li>관광지 리스트5</li></p></div>
-    </div>    
+<div class="container"><br>
+    <div style="text-align: center;"><h2>분류 결과</h2></div><br>
+        <div class="hero">
+            <div style="width:250px; height:300px; border:2px solid #e3f2fd; float:left; margin-right:20px;"><a href="{% url 'tourlist:index1' %}"><button type="submit"><h3>통합</h3></button></a>
+            <li>관광지 리스트1</li>
+            <li>관광지 리스트2</li>
+            <li>관광지 리스트3</li>
+            <li>관광지 리스트4</li>
+            <li>관광지 리스트5</li></p></div>
+            <div style="width:250px; height:300px; border:2px solid #e3f2fd; float:left; margin-right:20px;"><p><a href="{% url 'tourlist:index2' %}"><button type="submit"><h3>관심 장소</h3></button></a>
+            <li>관광지 리스트1</li>
+            <li>관광지 리스트2</li>
+            <li>관광지 리스트3</li>
+            <li>관광지 리스트4</li>
+            <li>관광지 리스트5</li></p></div>
+            <div style="width:250px; height:300px; border:2px solid #e3f2fd; float:left; margin-right:20px;"><p><a href="{% url 'tourlist:index3' %}"><button type="submit"><h3>특징</h3></button></a>
+            <li>관광지 리스트1</li>
+            <li>관광지 리스트2</li>
+            <li>관광지 리스트3</li>
+            <li>관광지 리스트4</li>
+            <li>관광지 리스트5</li></p></div>
+        </div>    
 </div>
 {% endblock %}

@@ -1,12 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container">
-    <div class="hero">
-        <h3>설문</h3>
+<div class="survey"><br>
+    <div style="text-align: center;"><h3>설문</h3></div><br>
+    <div style="width:900px; height:600px; border:1px solid #e3f2fd; align-items: center; text-align: center; margin: 0 auto;">
         <form method="post" action="{% url 'survey:index' %}">
             {% csrf_token %}
             <ul>
-                <h6>성별</h6>
+                <br><h6><b>성별</b></h6>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="M">
                     <label class="form-check-label" for="inlineRadio1">남</label>
@@ -16,7 +16,7 @@
                     <label class="form-check-label" for="inlineRadio2">여</label>
                 </div>
             
-                <h6>연령대</h6>
+                <h6><b>연령대</b></h6>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="age" id="inlineRadio1" value="1">
                     <label class="form-check-label" for="inlineRadio1">10대</label>
@@ -46,7 +46,7 @@
                     <label class="form-check-label" for="inlineRadio6">70대 이상</label>
                 </div>
 
-                <li>관심 지역 1</li>    
+                <h6><b>관심 지역 1</b></h6>    
                     <label for="region_1">도/특별시 선택</label>
                     <select class="form-control" id="region_1" name="region_1" onchange="regionAddress_1(this)">
                         <option >주소를 선택하세요</option>
@@ -72,7 +72,7 @@
                     <select class="form-control" id="area_1" name="area_1">
                     <option>선택해주세요.</option>
                     </select>
-                <li>관심 지역 2</li>    
+                <h6><b>관심 지역 2</b></h6>    
                     <label for="region_2">도/특별시 선택</label>
                     <select class="form-control" id="region_2" name="region_2" onchange="regionAddress_2(this)">
                         <option >주소를 선택하세요</option>
@@ -98,7 +98,7 @@
                     <select class="form-control" id="area_2" name="area_2">
                     <option>선택해주세요.</option>
                     </select>               
-                <li>관심 지역 3</li>    
+                <h6><b>관심 지역 3</b></h6>    
                     <label for="region_3">도/특별시 선택</label>
                     <select class="form-control" id="region_3" name="region_3" onchange="regionAddress_3(this)">
                         <option >주소를 선택하세요</option>
