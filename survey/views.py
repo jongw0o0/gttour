@@ -52,8 +52,8 @@ def index(request):
             # print(survey_data) 
             # return JsonResponse(survey_data, safe=False)
             # return redirect('classification:img_view')  # 저장 후 리다이렉트할 URL-html에서 작성
-            return redirect('http://127.0.0.1:8000/classification/')  # 저장 후 리다이렉트할 URL(로컬)
-            # return redirect('http://52.78.46.115/classification/')  # 저장 후 리다이렉트할 URL(서버)  
+            # return redirect('http://127.0.0.1:8000/classification/')  # 저장 후 리다이렉트할 URL(로컬)
+            return redirect('http://52.78.46.115/classification/')  # 저장 후 리다이렉트할 URL(서버)  
     else:
         form = SurveyForm()
     
