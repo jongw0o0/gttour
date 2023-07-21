@@ -6,7 +6,7 @@
         <form method="post" action="{% url 'survey:index' %}">
             {% csrf_token %}
             <ul>
-                <li>성별</li>
+                <h6>성별</h6>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="M">
                     <label class="form-check-label" for="inlineRadio1">남</label>
@@ -16,7 +16,7 @@
                     <label class="form-check-label" for="inlineRadio2">여</label>
                 </div>
             
-                <li>연령대</li>
+                <h6>연령대</h6>
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="age" id="inlineRadio1" value="1">
                     <label class="form-check-label" for="inlineRadio1">10대</label>
@@ -41,8 +41,240 @@
                     <input class="form-check-input" type="radio" name="age" id="inlineRadio6" value="6">
                     <label class="form-check-label" for="inlineRadio6">60대 이상</label>
                 </div>
-            
-                <li>관심 지역 1</li>
+
+                <li>관심 지역 1</li>    
+                    <label for="region_1">도/특별시 선택</label>
+                    <select class="form-control" id="region_1" name="region_1" onchange="regionAddress_1(this)">
+                        <option >주소를 선택하세요</option>
+                        <option value="서울특별시">서울특별시</option>
+                        <option value="경기도">경기도</option>
+                        <option value="인천광역시">인천광역시</option>
+                        <option value="강원특별자치도">강원특별자치도</option>
+                        <option value="충청북도">충청북도</option>
+                        <option value="충청남도">충청남도</option>
+                        <option value="대전광역시">대전광역시</option>
+                        <option value="세종특별자치시">세종특별자치시</option>
+                        <option value="전라북도">전라북도</option>
+                        <option value="전라남도">전라남도</option>
+                        <option value="광주광역시">광주광역시</option>
+                        <option value="경상북도">경상북도</option>
+                        <option value="경상남도">경상남도</option>
+                        <option value="대구광역시">대구광역시</option>
+                        <option value="울산광역시">울산광역시</option>
+                        <option value="부산광역시">부산광역시</option>
+                        <option value="제주특별자치도">제주특별자치도</option>
+                    </select>
+                    <label for="area_1">주소 소분류</label>
+                    <select class="form-control" id="area_1" name="area_1">
+                    <option>선택해주세요.</option>
+                    </select>
+                <li>관심 지역 2</li>    
+                    <label for="region_2">도/특별시 선택</label>
+                    <select class="form-control" id="region_2" name="region_2" onchange="regionAddress_2(this)">
+                        <option >주소를 선택하세요</option>
+                        <option value="서울특별시">서울특별시</option>
+                        <option value="경기도">경기도</option>
+                        <option value="인천광역시">인천광역시</option>
+                        <option value="강원특별자치도">강원특별자치도</option>
+                        <option value="충청북도">충청북도</option>
+                        <option value="충청남도">충청남도</option>
+                        <option value="대전광역시">대전광역시</option>
+                        <option value="세종특별자치시">세종특별자치시</option>
+                        <option value="전라북도">전라북도</option>
+                        <option value="전라남도">전라남도</option>
+                        <option value="광주광역시">광주광역시</option>
+                        <option value="경상북도">경상북도</option>
+                        <option value="경상남도">경상남도</option>
+                        <option value="대구광역시">대구광역시</option>
+                        <option value="울산광역시">울산광역시</option>
+                        <option value="부산광역시">부산광역시</option>
+                        <option value="제주특별자치도">제주특별자치도</option>
+                    </select>
+                    <label for="area_2">주소 소분류</label>
+                    <select class="form-control" id="area_2" name="area_2">
+                    <option>선택해주세요.</option>
+                    </select>               
+                <li>관심 지역 3</li>    
+                    <label for="region_3">도/특별시 선택</label>
+                    <select class="form-control" id="region_3" name="region_3" onchange="regionAddress_3(this)">
+                        <option >주소를 선택하세요</option>
+                        <option value="서울특별시">서울특별시</option>
+                        <option value="경기도">경기도</option>
+                        <option value="인천광역시">인천광역시</option>
+                        <option value="강원특별자치도">강원특별자치도</option>
+                        <option value="충청북도">충청북도</option>
+                        <option value="충청남도">충청남도</option>
+                        <option value="대전광역시">대전광역시</option>
+                        <option value="세종특별자치시">세종특별자치시</option>
+                        <option value="전라북도">전라북도</option>
+                        <option value="전라남도">전라남도</option>
+                        <option value="광주광역시">광주광역시</option>
+                        <option value="경상북도">경상북도</option>
+                        <option value="경상남도">경상남도</option>
+                        <option value="대구광역시">대구광역시</option>
+                        <option value="울산광역시">울산광역시</option>
+                        <option value="부산광역시">부산광역시</option>
+                        <option value="제주특별자치도">제주특별자치도</option>
+                    </select>
+                    <label for="area_3">주소 소분류</label>
+                    <select class="form-control" id="area_3" name="area_3">
+                    <option>선택해주세요.</option>
+                    </select>
+
+                    <script>
+                        function regionAddress_1(e) {
+                            var 서울특별시 = ["종로구","중구","용산구","성동구","광진구","동대문구","중랑구","성북구","강북구","도봉구","노원구","은평구","서대문구","마포구","양천구","강서구","구로구","금천구","영등포구","동작구","관악구","서초구","강남구","송파구","강동구"];
+                            var 경기도 = ["수원시 장안구","수원시 권선구","수원시 팔달구","수원시 영통구","성남시 수정구","성남시 중원구","성남시 분당구","의정부시","안양시 만안구","안양시 동안구","부천시","광명시","평택시","동두천시","안산시 상록구","안산시 단원구","고양시 덕양구","고양시 일산동구","고양시 일산서구","과천시","구리시","남양주시","오산시","시흥시","군포시","의왕시","하남시","용인시 처인구","용인시 기흥구","용인시 수지구","파주시","이천시","안성시","김포시","화성시","광주시","양주시","포천시","여주시","연천군","가평군","양평군"];
+                            var 인천광역시 = ["중구","동구","미추홀구","연수구","남동구","부평구","계양구","서구","강화군","옹진군"];
+                            var 강원특별자치도 = ["춘천시","원주시","강릉시","동해시","태백시","속초시","삼척시","홍천군","횡성군","영월군","평창군","정선군","철원군","화천군","양구군","인제군","고성군","양양군"];
+                            var 충청북도 = ["청주시 상당구","청주시 서원구","청주시 흥덕구","청주시 청원구","충주시","제천시","보은군","옥천군","영동군","증평군","진천군","괴산군","음성군","단양군"];
+                            var 충청남도 = ["천안시 동남구","천안시 서북구","공주시","보령시","아산시","서산시","논산시","계룡시","당진시","금산군","부여군","서천군","청양군","홍성군","예산군","태안군"];
+                            var 대전광역시 = ["동구","중구","서구","유성구","대덕구"];
+                            var 세종특별자치시 = ["세종특별자치시"];
+                            var 전라북도 = ["전주시 완산구","전주시 덕진구","군산시","익산시","정읍시","남원시","김제시","완주군","진안군","무주군","장수군","임실군","순창군","고창군","부안군"];
+                            var 전라남도 = ["목포시","여수시","순천시","나주시","광양시","담양군","곡성군","구례군","고흥군","보성군","화순군","장흥군","강진군","해남군","영암군","무안군","함평군","영광군","장성군","완도군","진도군","신안군"];
+                            var 광주광역시 = ["동구","서구","남구","북구","광산구"];
+                            var 경상북도 = ["포항시 남구","포항시 북구","경주시","김천시","안동시","구미시","영주시","영천시","상주시","문경시","경산시","의성군","청송군","영양군","영덕군","청도군","고령군","성주군","칠곡군","예천군","봉화군","을진군","울릉군"];
+                            var 경상남도 = ["창원시 의창구","창원시 성산구","창원시 마산합포구","창원시 마산회원구","창원시 진해구","진주시","통영시","사천시","김해시","밀양시","거제시","양산시","의령군","함안군","창녕군","고성군","남해군","하동군","산청군","함양군","거창군","합천군"];
+                            var 대구광역시 = ["중구","동구","서구","남구","북구","수성구","달서구","달성군","군위군"];
+                            var 울산광역시 = ["중구","남구","동구","북구","울주군"];
+                            var 부산광역시 = ["중구","서구","동구","영도구","부산진구","동래구","남구","북구","해운대구","사하구","금정구","강서구","연제구","수영구","사상구","기장군"];
+                            var 제주특별자치도 = ["제주시","서귀포시"];
+                            var target = document.getElementById("area_1")
+                        
+                            if (e.value == "서울특별시") var d = 서울특별시;
+                            else if (e.value == "경기도") var d = 경기도;
+                            else if (e.value == "인천광역시") var d = 인천광역시;
+                            else if (e.value == "강원특별자치도") var d = 강원특별자치도;
+                            else if (e.value == "충청북도") var d = 충청북도;
+                            else if (e.value == "충청남도") var d = 충청남도;
+                            else if (e.value == "대전광역시") var d = 대전광역시;
+                            else if (e.value == "세종특별자치시") var d = 세종특별자치시;
+                            else if (e.value == "전라북도") var d = 전라북도;
+                            else if (e.value == "전라남도") var d = 전라남도;
+                            else if (e.value == "광주광역시") var d = 광주광역시;
+                            else if (e.value == "경상북도") var d = 경상북도;
+                            else if (e.value == "경상남도") var d = 경상남도;
+                            else if (e.value == "대구광역시") var d = 대구광역시;
+                            else if (e.value == "울산광역시") var d = 울산광역시;
+                            else if (e.value == "부산광역시") var d = 부산광역시;
+                            else if (e.value == "제주특별자치도") var d = 제주특별자치도;
+                        
+                            target.options.length = 0;
+                    
+                            for (x in d) {
+                                var opt = document.createElement("option");
+                                opt.value = d[x];
+                                opt.innerHTML = d[x];
+                                target.appendChild(opt);
+                            }
+                        }
+
+                        function regionAddress_2(e) {
+                            var 서울특별시 = ["종로구","중구","용산구","성동구","광진구","동대문구","중랑구","성북구","강북구","도봉구","노원구","은평구","서대문구","마포구","양천구","강서구","구로구","금천구","영등포구","동작구","관악구","서초구","강남구","송파구","강동구"];
+                            var 경기도 = ["수원시 장안구","수원시 권선구","수원시 팔달구","수원시 영통구","성남시 수정구","성남시 중원구","성남시 분당구","의정부시","안양시 만안구","안양시 동안구","부천시","광명시","평택시","동두천시","안산시 상록구","안산시 단원구","고양시 덕양구","고양시 일산동구","고양시 일산서구","과천시","구리시","남양주시","오산시","시흥시","군포시","의왕시","하남시","용인시 처인구","용인시 기흥구","용인시 수지구","파주시","이천시","안성시","김포시","화성시","광주시","양주시","포천시","여주시","연천군","가평군","양평군"];
+                            var 인천광역시 = ["중구","동구","미추홀구","연수구","남동구","부평구","계양구","서구","강화군","옹진군"];
+                            var 강원특별자치도 = ["춘천시","원주시","강릉시","동해시","태백시","속초시","삼척시","홍천군","횡성군","영월군","평창군","정선군","철원군","화천군","양구군","인제군","고성군","양양군"];
+                            var 충청북도 = ["청주시 상당구","청주시 서원구","청주시 흥덕구","청주시 청원구","충주시","제천시","보은군","옥천군","영동군","증평군","진천군","괴산군","음성군","단양군"];
+                            var 충청남도 = ["천안시 동남구","천안시 서북구","공주시","보령시","아산시","서산시","논산시","계룡시","당진시","금산군","부여군","서천군","청양군","홍성군","예산군","태안군"];
+                            var 대전광역시 = ["동구","중구","서구","유성구","대덕구"];
+                            var 세종특별자치시 = ["세종특별자치시"];
+                            var 전라북도 = ["전주시 완산구","전주시 덕진구","군산시","익산시","정읍시","남원시","김제시","완주군","진안군","무주군","장수군","임실군","순창군","고창군","부안군"];
+                            var 전라남도 = ["목포시","여수시","순천시","나주시","광양시","담양군","곡성군","구례군","고흥군","보성군","화순군","장흥군","강진군","해남군","영암군","무안군","함평군","영광군","장성군","완도군","진도군","신안군"];
+                            var 광주광역시 = ["동구","서구","남구","북구","광산구"];
+                            var 경상북도 = ["포항시 남구","포항시 북구","경주시","김천시","안동시","구미시","영주시","영천시","상주시","문경시","경산시","의성군","청송군","영양군","영덕군","청도군","고령군","성주군","칠곡군","예천군","봉화군","을진군","울릉군"];
+                            var 경상남도 = ["창원시 의창구","창원시 성산구","창원시 마산합포구","창원시 마산회원구","창원시 진해구","진주시","통영시","사천시","김해시","밀양시","거제시","양산시","의령군","함안군","창녕군","고성군","남해군","하동군","산청군","함양군","거창군","합천군"];
+                            var 대구광역시 = ["중구","동구","서구","남구","북구","수성구","달서구","달성군","군위군"];
+                            var 울산광역시 = ["중구","남구","동구","북구","울주군"];
+                            var 부산광역시 = ["중구","서구","동구","영도구","부산진구","동래구","남구","북구","해운대구","사하구","금정구","강서구","연제구","수영구","사상구","기장군"];
+                            var 제주특별자치도 = ["제주시","서귀포시"];
+                            var target = document.getElementById("area_2")
+                        
+                            if (e.value == "서울특별시") var d = 서울특별시;
+                            else if (e.value == "경기도") var d = 경기도;
+                            else if (e.value == "인천광역시") var d = 인천광역시;
+                            else if (e.value == "강원특별자치도") var d = 강원특별자치도;
+                            else if (e.value == "충청북도") var d = 충청북도;
+                            else if (e.value == "충청남도") var d = 충청남도;
+                            else if (e.value == "대전광역시") var d = 대전광역시;
+                            else if (e.value == "세종특별자치시") var d = 세종특별자치시;
+                            else if (e.value == "전라북도") var d = 전라북도;
+                            else if (e.value == "전라남도") var d = 전라남도;
+                            else if (e.value == "광주광역시") var d = 광주광역시;
+                            else if (e.value == "경상북도") var d = 경상북도;
+                            else if (e.value == "경상남도") var d = 경상남도;
+                            else if (e.value == "대구광역시") var d = 대구광역시;
+                            else if (e.value == "울산광역시") var d = 울산광역시;
+                            else if (e.value == "부산광역시") var d = 부산광역시;
+                            else if (e.value == "제주특별자치도") var d = 제주특별자치도;
+                        
+                            target.options.length = 0;
+                    
+                            for (x in d) {
+                                var opt = document.createElement("option");
+                                opt.value = d[x];
+                                opt.innerHTML = d[x];
+                                target.appendChild(opt);
+                            }
+                        }
+
+                        function regionAddress_3(e) {
+                            var 서울특별시 = ["종로구","중구","용산구","성동구","광진구","동대문구","중랑구","성북구","강북구","도봉구","노원구","은평구","서대문구","마포구","양천구","강서구","구로구","금천구","영등포구","동작구","관악구","서초구","강남구","송파구","강동구"];
+                            var 경기도 = ["수원시 장안구","수원시 권선구","수원시 팔달구","수원시 영통구","성남시 수정구","성남시 중원구","성남시 분당구","의정부시","안양시 만안구","안양시 동안구","부천시","광명시","평택시","동두천시","안산시 상록구","안산시 단원구","고양시 덕양구","고양시 일산동구","고양시 일산서구","과천시","구리시","남양주시","오산시","시흥시","군포시","의왕시","하남시","용인시 처인구","용인시 기흥구","용인시 수지구","파주시","이천시","안성시","김포시","화성시","광주시","양주시","포천시","여주시","연천군","가평군","양평군"];
+                            var 인천광역시 = ["중구","동구","미추홀구","연수구","남동구","부평구","계양구","서구","강화군","옹진군"];
+                            var 강원특별자치도 = ["춘천시","원주시","강릉시","동해시","태백시","속초시","삼척시","홍천군","횡성군","영월군","평창군","정선군","철원군","화천군","양구군","인제군","고성군","양양군"];
+                            var 충청북도 = ["청주시 상당구","청주시 서원구","청주시 흥덕구","청주시 청원구","충주시","제천시","보은군","옥천군","영동군","증평군","진천군","괴산군","음성군","단양군"];
+                            var 충청남도 = ["천안시 동남구","천안시 서북구","공주시","보령시","아산시","서산시","논산시","계룡시","당진시","금산군","부여군","서천군","청양군","홍성군","예산군","태안군"];
+                            var 대전광역시 = ["동구","중구","서구","유성구","대덕구"];
+                            var 세종특별자치시 = ["세종특별자치시"];
+                            var 전라북도 = ["전주시 완산구","전주시 덕진구","군산시","익산시","정읍시","남원시","김제시","완주군","진안군","무주군","장수군","임실군","순창군","고창군","부안군"];
+                            var 전라남도 = ["목포시","여수시","순천시","나주시","광양시","담양군","곡성군","구례군","고흥군","보성군","화순군","장흥군","강진군","해남군","영암군","무안군","함평군","영광군","장성군","완도군","진도군","신안군"];
+                            var 광주광역시 = ["동구","서구","남구","북구","광산구"];
+                            var 경상북도 = ["포항시 남구","포항시 북구","경주시","김천시","안동시","구미시","영주시","영천시","상주시","문경시","경산시","의성군","청송군","영양군","영덕군","청도군","고령군","성주군","칠곡군","예천군","봉화군","을진군","울릉군"];
+                            var 경상남도 = ["창원시 의창구","창원시 성산구","창원시 마산합포구","창원시 마산회원구","창원시 진해구","진주시","통영시","사천시","김해시","밀양시","거제시","양산시","의령군","함안군","창녕군","고성군","남해군","하동군","산청군","함양군","거창군","합천군"];
+                            var 대구광역시 = ["중구","동구","서구","남구","북구","수성구","달서구","달성군","군위군"];
+                            var 울산광역시 = ["중구","남구","동구","북구","울주군"];
+                            var 부산광역시 = ["중구","서구","동구","영도구","부산진구","동래구","남구","북구","해운대구","사하구","금정구","강서구","연제구","수영구","사상구","기장군"];
+                            var 제주특별자치도 = ["제주시","서귀포시"];
+                            var target = document.getElementById("area_3")
+                        
+                            if (e.value == "서울특별시") var d = 서울특별시;
+                            else if (e.value == "경기도") var d = 경기도;
+                            else if (e.value == "인천광역시") var d = 인천광역시;
+                            else if (e.value == "강원특별자치도") var d = 강원특별자치도;
+                            else if (e.value == "충청북도") var d = 충청북도;
+                            else if (e.value == "충청남도") var d = 충청남도;
+                            else if (e.value == "대전광역시") var d = 대전광역시;
+                            else if (e.value == "세종특별자치시") var d = 세종특별자치시;
+                            else if (e.value == "전라북도") var d = 전라북도;
+                            else if (e.value == "전라남도") var d = 전라남도;
+                            else if (e.value == "광주광역시") var d = 광주광역시;
+                            else if (e.value == "경상북도") var d = 경상북도;
+                            else if (e.value == "경상남도") var d = 경상남도;
+                            else if (e.value == "대구광역시") var d = 대구광역시;
+                            else if (e.value == "울산광역시") var d = 울산광역시;
+                            else if (e.value == "부산광역시") var d = 부산광역시;
+                            else if (e.value == "제주특별자치도") var d = 제주특별자치도;
+                        
+                            target.options.length = 0;
+                    
+                            for (x in d) {
+                                var opt = document.createElement("option");
+                                opt.value = d[x];
+                                opt.innerHTML = d[x];
+                                target.appendChild(opt);
+                            }
+                        }
+                    </script>
+            </ul>
+            <a href="{% url 'classification:index' %}"><button type="submit">제출하기</button></a>
+        </form>
+    </div>
+</div>
+{% endblock %}
+
+
+              <!-- <li>관심 지역 1</li>
                 <select class="form-select" name="region_1" aria-label="Default select example">
                     <option selected disabled>지역을 선택하세요</option>
                     <option value="서울특별시">서울특별시</option>
@@ -56,7 +288,6 @@
                     <option value="성동구">성동구</option>
                     <option value="종로구">종로구</option>
                 </select>
-            
                 <li>관심 지역 2</li>
                 <select class="form-select" name="region_2" aria-label="Default select example">
                     <option selected disabled>지역을 선택하세요</option>
@@ -71,7 +302,6 @@
                     <option value="성동구">성동구</option>
                     <option value="종로구">종로구</option>
                 </select>
-            
                 <li>관심 지역 3</li>
                 <select class="form-select" name="region_3" aria-label="Default select example">
                     <option selected disabled>지역을 선택하세요</option>
@@ -85,90 +315,4 @@
                     <option value="강남구">강남구</option>
                     <option value="성동구">성동구</option>
                     <option value="종로구">종로구</option>
-                </select>
-                <!-- select 조건 -->
-                <li>관심 지역 1</li>    
-                <div class="form-group col-sm-5">
-                    <label for="addressKindu">도/특별시 선택</label>
-                    <select class="form-control" id="addressKindU" name="addressKindU" onchange="addressKindChange(this)">
-                        <option>주소를 선택하세요</option>
-                        <option value="a">서울특별시</option>
-                        <option value="b">경기도</option>
-                        <option value="c">인천광역시</option>
-                        <option value="d">강원특별자치도</option>
-                        <option value="e">충청북도</option>
-                        <option value="f">충청남도</option>
-                        <option value="g">대전광역시</option>
-                        <option value="h">세종특별자치시</option>
-                        <option value="i">전라북도</option>
-                        <option value="j">전라남도</option>
-                        <option value="k">광주광역시</option>
-                        <option value="l">경상북도</option>
-                        <option value="m">경상남도</option>
-                        <option value="n">대구광역시</option>
-                        <option value="o">울산광역시</option>
-                        <option value="p">부산광역시</option>
-                        <option value="q">제주특별자치도</option>
-                    </select>
-                </div>
-                <div class="form-group col-sm-4">
-                    <label for="addressKindD">주소 소분류</label>
-                    <select class="form-control" id="addressKindD" name="addressKindD">
-                    <option>선택해주세요.</option>
-                    </select>
-                </div>
-                <script>
-                    function addressKindChange(e) {
-                        var seoul = ["종로구","중구","용산구","성동구","광진구","동대문구","중랑구","성북구","강북구","도봉구","노원구","은평구","서대문구","마포구","양천구","강서구","구로구","금천구","영등포구","동작구","관악구","서초구","강남구","송파구","강동구"];
-                        var gyeonggi = ["수원시 장안구","수원시 권선구","수원시 팔달구","수원시 영통구","성남시 수정구","성남시 중원구","성남시 분당구","의정부시","안양시 만안구","안양시 동안구","부천시","광명시","평택시","동두천시","안산시 상록구","안산시 단원구","고양시 덕양구","고양시 일산동구","고양시 일산서구","과천시","구리시","남양주시","오산시","시흥시","군포시","의왕시","하남시","용인시 처인구","용인시 기흥구","용인시 수지구","파주시","이천시","안성시","김포시","화성시","광주시","양주시","포천시","여주시","연천군","가평군","양평군"];
-                        var incheon = ["중구","동구","미추홀구","연수구","남동구","부평구","계양구","서구","강화군","옹진군"];
-                        var gangwon = ["춘천시","원주시","강릉시","동해시","태백시","속초시","삼척시","홍천군","횡성군","영월군","평창군","정선군","철원군","화천군","양구군","인제군","고성군","양양군"];
-                        var chungbook = ["청주시 상당구","청주시 서원구","청주시 흥덕구","청주시 청원구","충주시","제천시","보은군","옥천군","영동군","증평군","진천군","괴산군","음성군","단양군"];
-                        var chungnam = ["천안시 동남구","천안시 서북구","공주시","보령시","아산시","서산시","논산시","계룡시","당진시","금산군","부여군","서천군","청양군","홍성군","예산군","태안군"];
-                        var daejeon = ["동구","중구","서구","유성구","대덕구"];
-                        var sejong = ["세종특별자치시"];
-                        var jeonbook = ["전주시 완산구","전주시 덕진구","군산시","익산시","정읍시","남원시","김제시","완주군","진안군","무주군","장수군","임실군","순창군","고창군","부안군"];
-                        var jeonnam = ["목포시","여수시","순천시","나주시","광양시","담양군","곡성군","구례군","고흥군","보성군","화순군","장흥군","강진군","해남군","영암군","무안군","함평군","영광군","장성군","완도군","진도군","신안군"];
-                        var gwangju = ["동구","서구","남구","북구","광산구"];
-                        var gyungbook = ["포항시 남구","포항시 북구","경주시","김천시","안동시","구미시","영주시","영천시","상주시","문경시","경산시","의성군","청송군","영양군","영덕군","청도군","고령군","성주군","칠곡군","예천군","봉화군","을진군","울릉군"];
-                        var gyungnam = ["창원시 의창구","창원시 성산구","창원시 마산합포구","창원시 마산회원구","창원시 진해구","진주시","통영시","사천시","김해시","밀양시","거제시","양산시","의령군","함안군","창녕군","고성군","남해군","하동군","산청군","함양군","거창군","합천군"];
-                        var daegu = ["중구","동구","서구","남구","북구","수성구","달서구","달성군","군위군"];
-                        var ulsan = ["중구","남구","동구","북구","울주군"];
-                        var busan = ["중구","서구","동구","영도구","부산진구","동래구","남구","북구","해운대구","사하구","금정구","강서구","연제구","수영구","사상구","기장군"];
-                        var jeju = ["제주시","서귀포시"];
-                        var target = document.getElementById("addressKindD")
-                
-                        if (e.value == "a") var d = seoul;
-                        else if (e.value == "b") var d = gyeonggi;
-                        else if (e.value == "c") var d = incheon;
-                        else if (e.value == "d") var d = gangwon;
-                        else if (e.value == "e") var d = chungbook;
-                        else if (e.value == "f") var d = chungnam;
-                        else if (e.value == "g") var d = daejeon;
-                        else if (e.value == "h") var d = sejong;
-                        else if (e.value == "i") var d = jeonbook;
-                        else if (e.value == "j") var d = jeonnam;
-                        else if (e.value == "k") var d = gwangju;
-                        else if (e.value == "l") var d = gyungbook;
-                        else if (e.value == "m") var d = gyungnam;
-                        else if (e.value == "n") var d = daegu;
-                        else if (e.value == "o") var d = ulsan;
-                        else if (e.value == "p") var d = busan;
-                        else if (e.value == "q") var d = jeju;
-                
-                        target.options.length = 0;
-                
-                        for (x in d) {
-                            var opt = document.createElement("option");
-                            opt.value = d[x];
-                            opt.innerHTML = d[x];
-                            target.appendChild(opt);
-                        }
-                    }
-                </script>
-            </ul>
-            <a href="{% url 'classification:index' %}"><button type="submit">제출하기</button></a>
-        </form>
-    </div>
-</div>
-{% endblock %}
+                </select> -->

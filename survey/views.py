@@ -3,6 +3,7 @@ from django.http import HttpResponseRedirect
 from .forms import SurveyForm
 from .models import Survey
 from django.views.decorators.csrf import csrf_exempt
+import json
 
 
 # Create your views here.
@@ -40,9 +41,23 @@ def index(request):
             survey_instance.regionsave()
             survey_instance.save() 
             
+            # survey_data = {
+            #     'gender': gender,
+            #     'age': age,
+            #     'myarea_1': survey_instance.myarea_1,
+            #     'myarea_2': survey_instance.myarea_2,
+            #     'myarea_3': survey_instance.myarea_3,
+            # }
+            # with open('survey_data.json', 'w') as json_file:
+            #     json.dump(survey_data, json_file)
+
+
+            # print(survey_data) 
+            # return JsonResponse(survey_data, safe=False)
+            # return redirect('classification:img_view')  # 저장 후 리다이렉트할 URL-html에서 작성
             return redirect('http://127.0.0.1:8000/classification/')  # 저장 후 리다이렉트할 URL(로컬)
             # return redirect('http://52.78.46.115/classification/')  # 저장 후 리다이렉트할 URL(서버)  
     else:
         form = SurveyForm()
     
-    return render(request, 'survey/survey.html')
+    return render(request, 'survey/survey.html', {'form': form})
