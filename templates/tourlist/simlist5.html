@@ -4,14 +4,23 @@
 
 <div class="container">
     <div class="hero">
-        <h4>다음 {{ similadest_data_list.0.location }} 여행지에요</h4>
+        <h4>다음 목록은 {{ similadest_data_list.4.location }} 정보에요</h4>
         <div style="width:800px; height:450px; border:3px solid #e3f2fd; float:right; margin-right:20px;">
             <button type="submit"><h5>키워드맵</h5></button>
             <button type="submit"><h5>관광지</h5></button>
             <button type="submit"><h5>긍정</h5></button>
             <button type="submit"><h5>부정</h5></button>
-        
-        <div style="width:200px; height:450px; border:1px solid #e3f2fd; float:left; margin-right:20px;"><Br>
+
+            <p>긍정: {{ similadest_data_list.4.positive }}</p>
+            <p>부정: {{ similadest_data_list.4.negative }}</p>
+            {% if similadest_data_list.4.image %}
+                <img src="{{ similadest_data_list.4.image }}" alt="{{ similadest_data_list.4.location }}" style="max-width: 150px; max-height: 100px;">
+            {% else %}
+                <p>No image</p>
+            {% endif %}
+            <p>관광지: {{ similadest_data_list.4.tour_loc }}</p>
+
+        <div style="width:200px; height:450px; border:1px solid #e3f2fd; float:left; margin-right:20px;">
             <a href="{% url 'tourlist:simlist1' %}"><li>{{ similadest_data_list.0.location }}</li></a>
             <a href="{% url 'tourlist:simlist2' %}"><li>{{ similadest_data_list.1.location }}</li></a>
             <a href="{% url 'tourlist:simlist3' %}"><li>{{ similadest_data_list.2.location }}</li></a>

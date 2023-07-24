@@ -5,25 +5,23 @@
     <div class="hero">
         <h4>다음 목록은 인상깊었던/좋았던 여행지와 유사한 여행지에요</h4>
         <div style="width:800px; height:450px; border:3px solid #e3f2fd; float:right; margin-right:20px;">
-            <button type="submit"><h5>특징</h5></button>
-            <button type="submit"><h5>특징</h5></button>
-            <button type="submit"><h5>특징</h5></button>
-            {% for item in destination_data_list %}
-    <div style="width:200px; height:150px; border:1px solid #e3f2fd; float:left; margin-right:20px;">
-        <p>
-            <p>장소 : {{ item.location }}</p>
-            <p>긍정: {{ item.positive }}</p>
-            <p>부정: {{ item.negative }}</p>
-            {% if item.image %}
-                <img src="{{ item.image }}" alt="{{ item.location }}" style="max-width: 150px; max-height: 100px;">
-            {% else %}
-                <p>No image</p>
-            {% endif %}
-            <p>관광지: {{ item.tour_loc }}</p>
-        </p>
+            <button type="submit"><h5>키워드맵</h5></button>
+            <button type="submit"><h5>관광지</h5></button>
+            <button type="submit"><h5>긍정</h5></button>
+            <button type="submit"><h5>부정</h5></button>
+            
+            
+    <div style="width:200px; height:450px; border:1px solid #e3f2fd; float:left; margin-right:20px;"><br>
+        <li>{{ destination_data_list.0.location }}</li>
+        <li>{{ destination_data_list.1.location }}</li>
+        <li>{{ destination_data_list.2.location }}</li>
+        <li>{{ destination_data_list.3.location }}</li>
+        <li>{{ destination_data_list.4.location }}</li>
     </div>
-    {% endfor %}
 </div>
 </div>
 </div>
 {% endblock %}
+
+
+<!-- <></a> -->
