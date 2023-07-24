@@ -1,8 +1,30 @@
-from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
+from django.http import JsonResponse
 from django.shortcuts import render
-
-# Create your views here.
+import csv
+import json
+# from tourlist.views import similadest_view, destination_view, total_view
 
 def index(request):
-    return render(request, 'classification/classification.html')
+    csv_file_path_destination = './destination.csv'
+    csv_file_path_similadest = './similadest.csv'
+
+    with open(csv_file_path_destination, 'r') as csvfile:
+        csv_reader = csv.reader(csvfile)
+        destination_data = list(csv_reader)
+        with open('destination_data.json', 'w') as json_file:
+            json.dump(destination_data, json_file)
+
+    with open(csv_file_path_similadest, 'r') as csvfile:
+        csv_reader = csv.reader(csvfile)
+        similadest_data = list(csv_reader)
+        with open('similadest_data.json', 'w') as json_file:
+            json.dump(similadest_data, json_file)
+
+    print('1',destination_data,'2',similadest_data) # 콘솔 확인용
+
+    data = {
+        'destination_data': destination_data,
+        'similadest_data': similadest_data,
+    }
+
+    return render(request, 'classification/classification.html', {'data': data})

@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'gttour.apps.GttourConfig',
     'survey.apps.SurveyConfig',
     'classification.apps.ClassificationConfig',
+    'tourlist.apps.TourlistConfig',
 ]
 
 MIDDLEWARE = [

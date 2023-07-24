@@ -44,7 +44,14 @@
                 <div class="form-check form-check-inline">
                     <input class="form-check-input" type="radio" name="age" id="inlineRadio6" value="6">
                     <label class="form-check-label" for="inlineRadio6">70대 이상</label>
-                </div>
+                </div><br>
+                    
+                <h6><b>가족이랑 같이 가시나요?</b></h6>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" name="family" id="flexCheckDefault"
+                           {% if family %} checked {% endif %}>
+                    <label class="form-check-label" for="flexCheckDefault">
+                    </label>
 
                 <h6><b>관심 지역 1</b></h6>    
                     <label for="region_1">도/특별시 선택</label>

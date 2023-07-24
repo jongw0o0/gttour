@@ -294,6 +294,7 @@ class Survey(models.Model):
 
     gender = models.CharField(max_length=1, choices=GENDER_CHOICES)
     age = models.CharField(max_length=1,choices=AGE_CHOICES)
+    family= models.BooleanField(default=False)
     region_1 = models.CharField(max_length=30, choices=REGION_CHOICES)
     area_1 = models.CharField(max_length=30, choices=AREA_CHOICES)
     region_2 = models.CharField(max_length=30, choices=REGION_CHOICES, blank=True)

@@ -1,17 +1,56 @@
-from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
 from django.shortcuts import render
+from .models import Tourmodel
+# from classification.views import index
+import csv
+import json
 
-# Create your views here.
+def similadest_view(request):
+    with open('./similadest.csv', 'r') as csvfile:
+        csv_reader = csv.reader(csvfile)
+        similadest_data = list(csv_reader)
+    print('5',similadest_data)
+    similadest_data_list = []  
+    for json_value in similadest_data:
+        location = json_value[0]    
+        try:
+            db_object = Tourmodel.objects.get(location=location)
+            similadest_data_list.append({
+                'location': db_object.location,
+                'positive': db_object.positive,
+                'negative' : db_object.negative,
+                'image': db_object.image.url, 
+                'tour_loc': db_object.tour_loc,
+            })
+        except Tourmodel.DoesNotExist:
+            pass
+        
+    with open('similadest_data_list.json', 'w') as json_file:
+        json.dump(similadest_data_list, json_file)
+    print('6',similadest_data_list)
+    return render(request, 'tourlist/similadest.html', {'similadest_data_list': similadest_data_list})
 
-# def index(request):
-#     return render(request, 'tourlist/tourlist1.html')
 
-def index1(request):
-    return render(request, 'tourlist/tourlist1.html')
+def destination_view(request):
+    with open('./destination.csv', 'r') as csvfile:
+        csv_reader = csv.reader(csvfile)
+        destination_data = list(csv_reader)
+    destination_data_list = []  
+    for json_value in destination_data:
+        location = json_value[0]    
 
-def index2(request):
-    return render(request, 'tourlist/tourlist2.html')
-
-def index3(request):
-    return render(request, 'tourlist/tourlist3.html')
+        try:
+            db_object = Tourmodel.objects.get(location=location)
+            destination_data_list.append({
+                'location': db_object.location,
+                'positive': db_object.positive,
+                'negative' : db_object.negative,
+                'image': db_object.image.url, 
+                'tour_loc': db_object.tour_loc,
+            })
+        except Tourmodel.DoesNotExist:
+            pass
+        
+    with open('destination_data_list.json', 'w') as json_file:
+        json.dump(destination_data_list, json_file)
+    print('7',destination_data_list)
+    return render(request, 'tourlist/destination.html', {'destination_data_list': destination_data_list})
