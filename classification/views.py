@@ -2,19 +2,20 @@ from django.http import JsonResponse
 from django.shortcuts import render
 import csv
 import json
+import urllib.request
 # from tourlist.views import similadest_view, destination_view, total_view
 
 def index(request):
     csv_file_path_destination = './destination.csv'
     csv_file_path_similadest = './similadest.csv'
 
-    with open(csv_file_path_destination, 'r') as csvfile:
+    with open(csv_file_path_destination, 'r', encoding='utf-8') as csvfile:
         csv_reader = csv.reader(csvfile)
         destination_data = list(csv_reader)
         with open('destination_data.json', 'w') as json_file:
             json.dump(destination_data, json_file).encode("utf-8")
 
-    with open(csv_file_path_similadest, 'r') as csvfile:
+    with open(csv_file_path_similadest, 'r',  encoding='utf-8') as csvfile:
         csv_reader = csv.reader(csvfile)
         similadest_data = list(csv_reader)
         with open('similadest_data.json', 'w') as json_file:
