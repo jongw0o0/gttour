@@ -19,6 +19,19 @@
         height: 100%; /* 화면 세로 크기를 화면 전체로 설정하려면 필요한 경우에 추가합니다. */
     }
 
+    .question-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .question-text {
+        align-items: center;
+        margin-right: 25px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+
     .survey button{
         background: none;
         border: 2px solid skyblue;
@@ -84,12 +97,13 @@
                     </div><br>
                     
                     <!-- <br> -->
-                    <h6><b>가족이랑 같이 가시나요?</b></h6>
-                    <div class="form-check">
-                        <input class="form-check-input" type="checkbox" name="family" id="flexCheckDefault"
-                            {% if family %} checked {% endif %}>
-                        <label class="form-check-label" for="flexCheckDefault">
-                        </label>
+                    <div class="question-container">
+                        <h6 class="question-text"><b>가족이랑 같이 가시나요?</b></h6>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" name="family" id="flexCheckDefault" {% if family %} checked {% endif %}>
+                            <label class="form-check-label" for="flexCheckDefault"></label>
+                        </div>
+                    </div>
 
                     <h6><b>관심 지역 1</b></h6>    
                         <label for="region_1">도/특별시 선택</label>
