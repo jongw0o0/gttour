@@ -10,7 +10,7 @@ def index(request):
     csv_file_path_similadest = './similadest.csv'
 
     with open(csv_file_path_destination, 'r', encoding='utf-8') as csvfile:
-        csv_reader = csv.reader(csvfile)
+        csv_reader = csv.reader(csvfile, encoding='utf-8')
         destination_data = list(csv_reader)
         with open('destination_data.json', 'w', encoding='utf-8') as json_file:
             json.dump(destination_data, json_file)
