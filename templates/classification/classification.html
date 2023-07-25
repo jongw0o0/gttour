@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 {% block content %}
 <style>
-    *{
+    /* *{
         margin: 0;
         padding: 0;
         box-sizing: border-box;
-    }
+    } */
 
     .classification{
-        width: 200vh;
+        width: 100%;
         height: 100vh;
         background: #e3f2fd;;
     }
@@ -22,10 +22,10 @@
         font-family: Verdana, Geneva, Tahoma, sans-serif;
     }
 
-    /* .classification .hero h3{
+    .classification .hero h2{
         font-size: 20px;
         margin-bottom: 20px;
-    } */
+    }
 
     .classification .hero button{
         background: none;
@@ -51,19 +51,21 @@
         width: 250px;
         height: 300px;
         border: 2px solid skyblue;
+        border-radius: 20px;
         margin-right: 20px;
         padding: 10px;
     }
 </style>
 
 <div class="classification"><br>
-    <div style="text-align: center;"><h2>분류 결과</h2></div><br>
+    <div style="text-align: center;"><h2>두 가지 기준으로 여행지를 추천드렸어요!</h2></div><br>
     <div class="hero">
         <div class="box">
             <a href="{% url 'tourlist:destination_view' %}">
                 <button type="submit"><h3>관심 장소</h3></button>
             </a>
             <ul>
+                <br>
                 {% for data_list in data.destination_data %}
                     <li>{{ data_list.0 }}</li>
                 {% endfor %}
@@ -74,6 +76,7 @@
                 <button type="submit"><h3>유사 집단</h3></button>
             </a>
             <ul>
+                <br>
                 {% for data_list in data.similadest_data %}
                     <li>{{ data_list.0 }}</li>
                 {% endfor %}

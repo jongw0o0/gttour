@@ -1,10 +1,22 @@
 {% extends 'base.html' %}
 {% block content %}
 <style>
+    body, html {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
     .survey{
-        width: 100%;
-        height: 100vh;
+        height: 125%;
         background: #e3f2fd;
+    }
+
+    .center-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%; /* 화면 세로 크기를 화면 전체로 설정하려면 필요한 경우에 추가합니다. */
     }
 
     .survey button{
@@ -25,136 +37,140 @@
 </style>
 
 <div class="survey"><br>
-    <div style="text-align: center;"><h3>설문</h3></div><br>
-    <div style="width:900px; height:750px; border:2px solid skyblue; align-items: center; text-align: center; margin: 0 auto;">
+    <div style="text-align: center;"><h3>&#128270;당신의 정보를 알려주세요!</h3></div><br>
+    <div style="width:800px; height:750px; border:2px solid skyblue; border-radius: 20px; align-items: center; text-align: center; margin: 0 auto;">
         <form method="post" action="{% url 'survey:index' %}">
             {% csrf_token %}
-            <ul>
-                <br><h6><b>성별</b></h6>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="M">
-                    <label class="form-check-label" for="inlineRadio1">남</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="F">
-                    <label class="form-check-label" for="inlineRadio2">여</label>
-                </div>
-            
-                <h6><b>연령대</b></h6>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="age" id="inlineRadio1" value="1">
-                    <label class="form-check-label" for="inlineRadio1">10대</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="age" id="inlineRadio2" value="2">
-                    <label class="form-check-label" for="inlineRadio2">20대</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="age" id="inlineRadio3" value="3">
-                    <label class="form-check-label" for="inlineRadio3">30대</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="age" id="inlineRadio4" value="4">
-                    <label class="form-check-label" for="inlineRadio4">40대</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="age" id="inlineRadio5" value="5">
-                    <label class="form-check-label" for="inlineRadio5">50대</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="age" id="inlineRadio6" value="6">
-                    <label class="form-check-label" for="inlineRadio6">60대</label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="radio" name="age" id="inlineRadio6" value="6">
-                    <label class="form-check-label" for="inlineRadio6">70대 이상</label>
-                </div><br>
+            <div class="center-container">
+                <ul>
+                    <br><h6><b>성별</b></h6>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="inlineRadio1" value="M">
+                        <label class="form-check-label" for="inlineRadio1">남</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="inlineRadio2" value="F">
+                        <label class="form-check-label" for="inlineRadio2">여</label>
+                    </div>
                     
-                <h6><b>가족이랑 같이 가시나요?</b></h6>
-                <div class="form-check">
-                    <input class="form-check-input" type="checkbox" name="family" id="flexCheckDefault"
-                           {% if family %} checked {% endif %}>
-                    <label class="form-check-label" for="flexCheckDefault">
-                    </label>
+                    <h6><b>연령대</b></h6>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="age" id="inlineRadio1" value="1">
+                        <label class="form-check-label" for="inlineRadio1">10대</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="age" id="inlineRadio2" value="2">
+                        <label class="form-check-label" for="inlineRadio2">20대</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="age" id="inlineRadio3" value="3">
+                        <label class="form-check-label" for="inlineRadio3">30대</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="age" id="inlineRadio4" value="4">
+                        <label class="form-check-label" for="inlineRadio4">40대</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="age" id="inlineRadio5" value="5">
+                        <label class="form-check-label" for="inlineRadio5">50대</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="age" id="inlineRadio6" value="6">
+                        <label class="form-check-label" for="inlineRadio6">60대</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="radio" name="age" id="inlineRadio6" value="6">
+                        <label class="form-check-label" for="inlineRadio6">70대 이상</label>
+                    </div><br>
+                    
+                    <!-- <br> -->
+                    <h6><b>가족이랑 같이 가시나요?</b></h6>
+                    <div class="form-check">
+                        <input class="form-check-input" type="checkbox" name="family" id="flexCheckDefault"
+                            {% if family %} checked {% endif %}>
+                        <label class="form-check-label" for="flexCheckDefault">
+                        </label>
 
-                <h6><b>관심 지역 1</b></h6>    
-                    <label for="region_1">도/특별시 선택</label>
-                    <select class="form-control" id="region_1" name="region_1" onchange="regionAddress_1(this)">
-                        <option >주소를 선택하세요</option>
-                        <option value="서울특별시">서울특별시</option>
-                        <option value="경기도">경기도</option>
-                        <option value="인천광역시">인천광역시</option>
-                        <option value="강원특별자치도">강원특별자치도</option>
-                        <option value="충청북도">충청북도</option>
-                        <option value="충청남도">충청남도</option>
-                        <option value="대전광역시">대전광역시</option>
-                        <option value="세종특별자치시">세종특별자치시</option>
-                        <option value="전라북도">전라북도</option>
-                        <option value="전라남도">전라남도</option>
-                        <option value="광주광역시">광주광역시</option>
-                        <option value="경상북도">경상북도</option>
-                        <option value="경상남도">경상남도</option>
-                        <option value="대구광역시">대구광역시</option>
-                        <option value="울산광역시">울산광역시</option>
-                        <option value="부산광역시">부산광역시</option>
-                        <option value="제주특별자치도">제주특별자치도</option>
-                    </select>
-                    <label for="area_1">주소 소분류</label>
-                    <select class="form-control" id="area_1" name="area_1">
-                    <option>선택해주세요.</option>
-                    </select>
-                <h6><b>관심 지역 2</b></h6>    
-                    <label for="region_2">도/특별시 선택</label>
-                    <select class="form-control" id="region_2" name="region_2" onchange="regionAddress_2(this)">
-                        <option >주소를 선택하세요</option>
-                        <option value="서울특별시">서울특별시</option>
-                        <option value="경기도">경기도</option>
-                        <option value="인천광역시">인천광역시</option>
-                        <option value="강원특별자치도">강원특별자치도</option>
-                        <option value="충청북도">충청북도</option>
-                        <option value="충청남도">충청남도</option>
-                        <option value="대전광역시">대전광역시</option>
-                        <option value="세종특별자치시">세종특별자치시</option>
-                        <option value="전라북도">전라북도</option>
-                        <option value="전라남도">전라남도</option>
-                        <option value="광주광역시">광주광역시</option>
-                        <option value="경상북도">경상북도</option>
-                        <option value="경상남도">경상남도</option>
-                        <option value="대구광역시">대구광역시</option>
-                        <option value="울산광역시">울산광역시</option>
-                        <option value="부산광역시">부산광역시</option>
-                        <option value="제주특별자치도">제주특별자치도</option>
-                    </select>
-                    <label for="area_2">주소 소분류</label>
-                    <select class="form-control" id="area_2" name="area_2">
-                    <option>선택해주세요.</option>
-                    </select>               
-                <h6><b>관심 지역 3</b></h6>    
-                    <label for="region_3">도/특별시 선택</label>
-                    <select class="form-control" id="region_3" name="region_3" onchange="regionAddress_3(this)">
-                        <option >주소를 선택하세요</option>
-                        <option value="서울특별시">서울특별시</option>
-                        <option value="경기도">경기도</option>
-                        <option value="인천광역시">인천광역시</option>
-                        <option value="강원특별자치도">강원특별자치도</option>
-                        <option value="충청북도">충청북도</option>
-                        <option value="충청남도">충청남도</option>
-                        <option value="대전광역시">대전광역시</option>
-                        <option value="세종특별자치시">세종특별자치시</option>
-                        <option value="전라북도">전라북도</option>
-                        <option value="전라남도">전라남도</option>
-                        <option value="광주광역시">광주광역시</option>
-                        <option value="경상북도">경상북도</option>
-                        <option value="경상남도">경상남도</option>
-                        <option value="대구광역시">대구광역시</option>
-                        <option value="울산광역시">울산광역시</option>
-                        <option value="부산광역시">부산광역시</option>
-                        <option value="제주특별자치도">제주특별자치도</option>
-                    </select>
-                    <label for="area_3">주소 소분류</label>
-                    <select class="form-control" id="area_3" name="area_3">
-                    <option>선택해주세요.</option>
-                    </select>
+                    <h6><b>관심 지역 1</b></h6>    
+                        <label for="region_1">도/특별시 선택</label>
+                        <select class="form-control" id="region_1" name="region_1" onchange="regionAddress_1(this)">
+                            <option >주소를 선택하세요</option>
+                            <option value="서울특별시">서울특별시</option>
+                            <option value="경기도">경기도</option>
+                            <option value="인천광역시">인천광역시</option>
+                            <option value="강원특별자치도">강원특별자치도</option>
+                            <option value="충청북도">충청북도</option>
+                            <option value="충청남도">충청남도</option>
+                            <option value="대전광역시">대전광역시</option>
+                            <option value="세종특별자치시">세종특별자치시</option>
+                            <option value="전라북도">전라북도</option>
+                            <option value="전라남도">전라남도</option>
+                            <option value="광주광역시">광주광역시</option>
+                            <option value="경상북도">경상북도</option>
+                            <option value="경상남도">경상남도</option>
+                            <option value="대구광역시">대구광역시</option>
+                            <option value="울산광역시">울산광역시</option>
+                            <option value="부산광역시">부산광역시</option>
+                            <option value="제주특별자치도">제주특별자치도</option>
+                        </select>
+                        <label for="area_1">주소 소분류</label>
+                        <select class="form-control" id="area_1" name="area_1">
+                        <option>선택해주세요.</option>
+                        </select>
+                    <h6><b>관심 지역 2</b></h6>    
+                        <label for="region_2">도/특별시 선택</label>
+                        <select class="form-control" id="region_2" name="region_2" onchange="regionAddress_2(this)">
+                            <option >주소를 선택하세요</option>
+                            <option value="서울특별시">서울특별시</option>
+                            <option value="경기도">경기도</option>
+                            <option value="인천광역시">인천광역시</option>
+                            <option value="강원특별자치도">강원특별자치도</option>
+                            <option value="충청북도">충청북도</option>
+                            <option value="충청남도">충청남도</option>
+                            <option value="대전광역시">대전광역시</option>
+                            <option value="세종특별자치시">세종특별자치시</option>
+                            <option value="전라북도">전라북도</option>
+                            <option value="전라남도">전라남도</option>
+                            <option value="광주광역시">광주광역시</option>
+                            <option value="경상북도">경상북도</option>
+                            <option value="경상남도">경상남도</option>
+                            <option value="대구광역시">대구광역시</option>
+                            <option value="울산광역시">울산광역시</option>
+                            <option value="부산광역시">부산광역시</option>
+                            <option value="제주특별자치도">제주특별자치도</option>
+                        </select>
+                        <label for="area_2">주소 소분류</label>
+                        <select class="form-control" id="area_2" name="area_2">
+                        <option>선택해주세요.</option>
+                        </select>               
+                    <h6><b>관심 지역 3</b></h6>    
+                        <label for="region_3">도/특별시 선택</label>
+                        <select class="form-control" id="region_3" name="region_3" onchange="regionAddress_3(this)">
+                            <option >주소를 선택하세요</option>
+                            <option value="서울특별시">서울특별시</option>
+                            <option value="경기도">경기도</option>
+                            <option value="인천광역시">인천광역시</option>
+                            <option value="강원특별자치도">강원특별자치도</option>
+                            <option value="충청북도">충청북도</option>
+                            <option value="충청남도">충청남도</option>
+                            <option value="대전광역시">대전광역시</option>
+                            <option value="세종특별자치시">세종특별자치시</option>
+                            <option value="전라북도">전라북도</option>
+                            <option value="전라남도">전라남도</option>
+                            <option value="광주광역시">광주광역시</option>
+                            <option value="경상북도">경상북도</option>
+                            <option value="경상남도">경상남도</option>
+                            <option value="대구광역시">대구광역시</option>
+                            <option value="울산광역시">울산광역시</option>
+                            <option value="부산광역시">부산광역시</option>
+                            <option value="제주특별자치도">제주특별자치도</option>
+                        </select>
+                        <label for="area_3">주소 소분류</label>
+                        <select class="form-control" id="area_3" name="area_3">
+                        <option>선택해주세요.</option>
+                        </select>
+                        <div class ="button"><a href="{% url 'classification:index' %}"><button type="submit">제출하기</button></a></div>
+                    </div>
 
                     <script>
                         function regionAddress_1(e) {
@@ -302,7 +318,7 @@
                         }
                     </script>
             </ul>
-            <div class ="button"><a href="{% url 'classification:index' %}"><button type="submit">제출하기</button></a></div>
+            
         </form>
     </div>
 </div>
