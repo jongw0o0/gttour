@@ -9,16 +9,16 @@ def index(request):
     csv_file_path_destination = './destination.csv'
     csv_file_path_similadest = './similadest.csv'
 
-    with open(csv_file_path_similadest, 'r',  encoding='utf-8-sig') as csvfile:
+    with open(csv_file_path_similadest, 'r') as csvfile:
         csv_reader = csv.reader(csvfile)
         similadest_data = list(csv_reader)
-        with open('similadest_data.json', 'w', encoding='utf-8-sig') as json_file:
+        with open('similadest_data.json', 'w') as json_file:
             json.dump(similadest_data, json_file)
 
-    with open(csv_file_path_destination, 'r', encoding='utf-8-sig') as csvfile:
+    with open(csv_file_path_destination, 'r') as csvfile:
         csv_reader = csv.reader(csvfile)
         destination_data = list(csv_reader)
-        with open('destination_data.json', 'w', encoding='utf-8-sig') as json_file:
+        with open('destination_data.json', 'w') as json_file:
             json.dump(destination_data, json_file)
 
 
