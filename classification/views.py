@@ -15,10 +15,10 @@ def index(request):
         with open('similadest_data.json', 'w', encoding='utf-8-sig') as json_file:
             json.dump(similadest_data, json_file)
 
-    with open(csv_file_path_destination, 'r', encoding='cp949') as csvfile:
+    with open(csv_file_path_destination, 'r', encoding='utf-8-sig') as csvfile:
         csv_reader = csv.reader(csvfile)
         destination_data = list(csv_reader)
-        with open('destination_data.json', 'w', encoding='cp949') as json_file:
+        with open('destination_data.json', 'w', encoding='utf-8-sig') as json_file:
             json.dump(destination_data, json_file)
 
 
