@@ -1,8 +1,32 @@
 {% extends 'base.html' %}
 {% block content %}
+<style>
+    .survey{
+        width: 100%;
+        height: 100vh;
+        background: #e3f2fd;
+    }
+
+    .survey button{
+        background: none;
+        border: 2px solid skyblue;
+        color: black;
+        padding: 15px 20px;
+        border-radius: 20px;
+        margin-top: 30px;
+        outline: none;
+        cursor: pointer;
+        transition: all .4s;
+    }
+
+    .survey button:hover{
+        background-color: skyblue;
+    }
+</style>
+
 <div class="survey"><br>
     <div style="text-align: center;"><h3>설문</h3></div><br>
-    <div style="width:900px; height:600px; border:1px solid #e3f2fd; align-items: center; text-align: center; margin: 0 auto;">
+    <div style="width:900px; height:750px; border:2px solid skyblue; align-items: center; text-align: center; margin: 0 auto;">
         <form method="post" action="{% url 'survey:index' %}">
             {% csrf_token %}
             <ul>
@@ -278,7 +302,7 @@
                         }
                     </script>
             </ul>
-            <a href="{% url 'classification:index' %}"><button type="submit">제출하기</button></a>
+            <div class ="button"><a href="{% url 'classification:index' %}"><button type="submit">제출하기</button></a></div>
         </form>
     </div>
 </div>

@@ -15,10 +15,10 @@ urlpatterns = [
     path('similadest_view/list4/', views.simlist4, name='simlist4'),
     path('similadest_view/list5/', views.simlist5, name='simlist5'),
 
-    # path('destination_view/list1/', views.deslist1, name='deslist1'),
-    # path('destination_view/list2/', views.deslist2, name='deslist2'),
-    # path('destination_view/list3/', views.deslist3, name='deslist3'),
-    # path('destination_view/list4/', views.deslist4, name='deslist4'),
-    # path('destination_view/list5/', views.deslist5, name='deslist5'),
+    path('destination_view/list1/', views.deslist1, name='deslist1'),
+    path('destination_view/list2/', views.deslist2, name='deslist2'),
+    path('destination_view/list3/', views.deslist3, name='deslist3'),
+    path('destination_view/list4/', views.deslist4, name='deslist4'),
+    path('destination_view/list5/', views.deslist5, name='deslist5'),
     # 상세정보 url 필요할듯
 ]

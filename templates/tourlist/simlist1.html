@@ -1,32 +1,112 @@
 {% extends 'base.html' %}
 {% block content %}
 <meta charset="UTF-8">
+<style>
+    html, body {
+        margin: 0;
+    }
 
-<div class="container">
+    .main{
+        width: 100%;
+        height: 100vh;
+        margin: 0 auto;
+        background: #e3f2fd;
+        padding: 0;
+        margin: 0;
+    }
+
+    .main .hero{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .main .hero h2{
+        font-size: 60px;
+        margin-bottom: 20px;
+    }
+
+    .main .hero p{
+        font-size: 25px;
+    }
+
+    .main .hero button{
+        background: none;
+        border: 2px solid skyblue;
+        color: black;
+        padding: 15px 20px;
+        border-radius: 20px;
+        margin-top: 30px;
+        outline: none;
+        cursor: pointer;
+        transition: all .4s;
+    }
+
+    .main .hero button:hover{
+        background-color: skyblue;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    .button-container {
+        display: flex;
+        flex-direction: row;
+        align-items: center; 
+        /* margin-right: 30px; */
+        justify-content: center;
+    }
+
+    .button-container button {
+        margin-right: 20px;
+        padding: 5px 10px;
+    }
+</style>
+
+<div class="main">
     <div class="hero">
         <h4>다음 목록은 {{ similadest_data_list.0.location }} 여행 정보에요</h4>
+        
         <div style="width:800px; height:450px; border:3px solid #e3f2fd; float:right; margin-right:20px;">
-            <button type="submit"><h5>키워드맵</h5></button>
-            <button type="submit"><h5>관광지</h5></button>
-            <button type="submit"><h5>긍정</h5></button>
-            <button type="submit"><h5>부정</h5></button>
-
-            <p>긍정: {{ similadest_data_list.0.positive }}</p>
-            <p>부정: {{ similadest_data_list.0.negative }}</p>
-            {% if similadest_data_list.0.image %}
-                <img src="{{ similadest_data_list.0.image }}" alt="{{ similadest_data_list.0.location }}" style="max-width: 150px; max-height: 100px;">
-            {% else %}
-                <p>No image</p>
-            {% endif %}
-            <p>관광지: {{ similadest_data_list.0.tour_loc }}</p>
-
-        <!-- <div style="width:200px; height:450px; border:1px solid #e3f2fd; float:left; margin-right:20px;">
-            <a href="{% url 'tourlist:simlist1' %}"><li>{{ similadest_data_list.0.location }}</li></a>
-            <a href="{% url 'tourlist:simlist2' %}"><li>{{ similadest_data_list.1.location }}</li></a>
-            <a href="{% url 'tourlist:simlist3' %}"><li>{{ similadest_data_list.2.location }}</li></a>
-            <a href="{% url 'tourlist:simlist4' %}"><li>{{ similadest_data_list.3.location }}</li></a>
-            <a href="{% url 'tourlist:simlist5' %}"><li>{{ similadest_data_list.4.location }}</li></a>
-        </div> -->
+            <div class="button-container">
+                <button type="button" onclick="showContent('imageContainer')"><h5>키워드맵</h5></button>
+                <button type="button" onclick="showContent('tourLocContainer')"><h5>관광지</h5></button>
+                <button type="button" onclick="showContent('positiveContainer')"><h5>긍정</h5></button>
+                <button type="button" onclick="showContent('negativeContainer')"><h5>부정</h5></button>
+            </div>
+            <div id="imageContainer" class="hidden">
+                {% if similadest_data_list.0.image %}
+                    <img src="{{ similadest_data_list.0.image }}" alt="{{ similadest_data_list.0.location }}" style="max-width: 150px; max-height: 100px;">
+                {% else %}
+                    <p>No image</p>
+                {% endif %}
+            </div>
+            <div id="tourLocContainer" class="hidden">
+                <p>관광지: {{ similadest_data_list.0.tour_loc }}</p>
+            </div>
+            <div id="positiveContainer" class="hidden">
+                <p>긍정: {{ similadest_data_list.0.positive }}</p>
+            </div>
+            <div id="negativeContainer" class="hidden">
+                <p>부정: {{ similadest_data_list.0.negative }}</p>
+            </div>
     </div>
 </div>
+
+<script>
+    function showContent(containerId) {
+        // 모든 내용을 숨깁니다.
+        document.querySelectorAll('.hero > div > div').forEach(function(item) {
+            item.classList.add('hidden');
+        });
+
+        // 클릭한 버튼에 맞는 내용을 보여줍니다.
+        document.getElementById(containerId).classList.remove('hidden');
+    }
+</script>
+
 {% endblock %}

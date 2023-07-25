@@ -1,6 +1,62 @@
 {% extends 'base.html' %}
 {% block content %}
-<div class="container"><br>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    .classification{
+        width: 200vh;
+        height: 100vh;
+        background: #e3f2fd;;
+    }
+    
+    .classification .hero{
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    /* .classification .hero h3{
+        font-size: 20px;
+        margin-bottom: 20px;
+    } */
+
+    .classification .hero button{
+        background: none;
+        border: 2px solid skyblue;
+        color: black;
+        padding: 15px 20px;
+        border-radius: 20px;
+        margin-top: 30px;
+        outline: none;
+        cursor: pointer;
+        transition: all .4s;
+    }
+
+    .classification .hero button:hover{
+        background-color: skyblue;
+    }
+
+    .hero {
+        display: flex; 
+    }
+
+    .box {
+        width: 250px;
+        height: 300px;
+        border: 2px solid skyblue;
+        margin-right: 20px;
+        padding: 10px;
+    }
+</style>
+
+<div class="classification"><br>
     <div style="text-align: center;"><h2>분류 결과</h2></div><br>
     <div class="hero">
         <div class="box">
@@ -25,17 +81,4 @@
         </div>
     </div>
 </div>
-<style>
-    .hero {
-        display: flex; 
-    }
-
-    .box {
-        width: 250px;
-        height: 300px;
-        border: 2px solid #e3f2fd;
-        margin-right: 20px;
-        padding: 10px;
-    }
-</style>
 {% endblock %}
