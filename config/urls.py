@@ -16,17 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.conf.urls.static import static
+from django.conf import settings
 
-# from gttour import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    # path('gttour/', views.index),
     path('gttour/', include('gttour.urls')),
     path('survey/', include('survey.urls')),
+    path('waiting/',  include('waiting.urls')),
     path('classification/', include('classification.urls')),
     path('tourlist/', include('tourlist.urls')),
-    # path('tourlist/index1/', include('tourlist.urls')),
-    # path('tourlist/index2/', include('tourlist.urls')),
-    # path('tourlist/index3/', include('tourlist.urls')),
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
