@@ -46,7 +46,6 @@ def destination_view(request):
                 'negative' : db_object.negative,
                 'image': db_object.image.url, 
                 'tour_loc': db_object.tour_loc,
-                'url': f'/tourlist/destination_view/{db_object.location}/'
             })
         except Tourmodel.DoesNotExist:
             pass
