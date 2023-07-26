@@ -6,7 +6,7 @@ import pandas as pd
 from django.http import JsonResponse
 from django.views import View
 from django.views.decorators.csrf import csrf_exempt
-from .models import Area  # 가정: 앱의 이름이 'myapp'
+from waiting.models import Area  # 가정: 앱의 이름이 'myapp'
 import numpy as np
 from sklearn.metrics.pairwise import cosine_similarity
 
@@ -14,6 +14,7 @@ def read_json_file(file_path):
     with open(file_path, 'r') as file:
         data = json.load(file)
     return data
+
 
 # 클러스터링 및 유사도 기반 지역 추천 함수
 def recommend_areas(cluster_df, survey_data):
@@ -37,7 +38,7 @@ def recommend_areas(cluster_df, survey_data):
         similar_areas = similar_areas[similar_areas['area'] != area]
     
     if not similar_areas.empty:
-        top_5_areas = similar_areas.sort_values('similarity', ascending=False)['area'].values[:5]
+        top_5_areas = similar_areas.sort_values('similarity', ascending=False)['area'].values[:5].tolist()
         return top_5_areas
     else:
         return []

@@ -48,7 +48,22 @@
         background-color: skyblue;
         box-shadow: 3px 2px 5px 1px rgb(0 0 0 / 20%);
     }
+    
+    .link {
+    color: #ffffff;
+    background: skyblue;
+    font-size: 1.2em;
+    padding: 0.3em 0.5em;
+    margin-right: 0.1em;
+    font-family: 'font1';
+    }
+
 </style>
+<!-- <style type="text/css">
+
+    
+</style>
+     -->
 
 <meta charset="UTF-8">
 <div class="main">
@@ -64,11 +79,11 @@
             <br>
             <h6 style="font-family: font1; font-size: 20px;">지역을 선택하세요</h6>
             <br>
-            <a href="{% url 'tourlist:deslist1' %}"><li>{{ destination_data_list.0.location }}</li></a>
-            <a href="{% url 'tourlist:deslist2' %}"><li>{{ destination_data_list.1.location }}</li></a>
-            <a href="{% url 'tourlist:deslist3' %}"><li>{{ destination_data_list.2.location }}</li></a>
-            <a href="{% url 'tourlist:deslist4' %}"><li>{{ destination_data_list.3.location }}</li></a>
-            <a href="{% url 'tourlist:deslist5' %}"><li>{{ destination_data_list.4.location }}</li></a>
+            <a href="{% url 'tourlist:deslist1' %}" class="link"><li>{{ destination_data_list.0.location }}</li></a>
+            <a href="{% url 'tourlist:deslist2' %}" class="link"><li>{{ destination_data_list.1.location }}</li></a>
+            <a href="{% url 'tourlist:deslist3' %}" class="link"><li>{{ destination_data_list.2.location }}</li></a>
+            <a href="{% url 'tourlist:deslist4' %}" class="link"><li>{{ destination_data_list.3.location }}</li></a>
+            <a href="{% url 'tourlist:deslist5' %}" class="link"><li>{{ destination_data_list.4.location }}</li></a>
         </div>
     </div>
 </div>

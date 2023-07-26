@@ -1,6 +1,6 @@
 # load_data_from_csv.py
 from django.core.management.base import BaseCommand, CommandError
-from waitting.models import Place
+from waiting.models import Place
 import csv
 
 class Command(BaseCommand):
