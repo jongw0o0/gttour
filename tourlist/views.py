@@ -5,7 +5,7 @@ import csv
 import json
 
 def similadest_view(request):
-    with open('./similadest.csv', 'r') as csvfile:
+    with open('./similadest.csv', 'r', encoding='utf-8') as csvfile:
         csv_reader = csv.reader(csvfile)
         similadest_data = list(csv_reader)
     print('5',similadest_data)
@@ -24,14 +24,14 @@ def similadest_view(request):
         except Tourmodel.DoesNotExist:
             pass
         
-    with open('similadest_data_list.json', 'w') as json_file:
+    with open('similadest_data_list.json', 'w', encoding='utf-8') as json_file:
         json.dump(similadest_data_list, json_file)
     print('6',similadest_data_list)
     return render(request, 'tourlist/similadest.html', {'similadest_data_list': similadest_data_list})
 
 
 def destination_view(request):
-    with open('./destination.csv', 'r') as csvfile:
+    with open('./destination.csv', 'r', encoding='utf-8') as csvfile:
         csv_reader = csv.reader(csvfile)
         destination_data = list(csv_reader)
     destination_data_list = []  
@@ -51,7 +51,7 @@ def destination_view(request):
         except Tourmodel.DoesNotExist:
             pass
 
-    with open('destination_data_list.json', 'w') as json_file:
+    with open('destination_data_list.json', 'w', encoding='utf-8') as json_file:
         json.dump(destination_data_list, json_file)
     print('7',destination_data_list)
     return render(request, 'tourlist/destination.html', {'destination_data_list': destination_data_list})
@@ -62,7 +62,7 @@ def destination_view(request):
 
 
 def simlist1(request):
-    with open('./similadest.csv', 'r') as csvfile:
+    with open('./similadest.csv', 'r', encoding='utf-8') as csvfile:
         csv_reader = csv.reader(csvfile)
         similadest_data = list(csv_reader)
     print('5',similadest_data)
@@ -81,13 +81,13 @@ def simlist1(request):
         except Tourmodel.DoesNotExist:
             pass
         
-    with open('similadest_data_list.json', 'w') as json_file:
+    with open('similadest_data_list.json', 'w', encoding='utf-8') as json_file:
         json.dump(similadest_data_list, json_file)
     print('6',similadest_data_list)
     return render(request, 'tourlist/simlist1.html', {'similadest_data_list': similadest_data_list})
 
 def simlist2(request):
-    with open('./similadest.csv', 'r') as csvfile:
+    with open('./similadest.csv', 'r', encoding='utf-8') as csvfile:
         csv_reader = csv.reader(csvfile)
         similadest_data = list(csv_reader)
     print('5',similadest_data)
@@ -106,13 +106,13 @@ def simlist2(request):
         except Tourmodel.DoesNotExist:
             pass
         
-    with open('similadest_data_list.json', 'w') as json_file:
+    with open('similadest_data_list.json', 'w', encoding='utf-8') as json_file:
         json.dump(similadest_data_list, json_file)
     print('6',similadest_data_list)
     return render(request, 'tourlist/simlist2.html', {'similadest_data_list': similadest_data_list})
 
 def simlist3(request):
-    with open('./similadest.csv', 'r') as csvfile:
+    with open('./similadest.csv', 'r', encoding='utf-8') as csvfile:
         csv_reader = csv.reader(csvfile)
         similadest_data = list(csv_reader)
     print('5',similadest_data)
@@ -131,13 +131,13 @@ def simlist3(request):
         except Tourmodel.DoesNotExist:
             pass
         
-    with open('similadest_data_list.json', 'w') as json_file:
+    with open('similadest_data_list.json', 'w', encoding='utf-8') as json_file:
         json.dump(similadest_data_list, json_file)
     print('6',similadest_data_list)
     return render(request, 'tourlist/simlist3.html', {'similadest_data_list': similadest_data_list})
 
 def simlist4(request):
-    with open('./similadest.csv', 'r') as csvfile:
+    with open('./similadest.csv', 'r', encoding='utf-8') as csvfile:
         csv_reader = csv.reader(csvfile)
         similadest_data = list(csv_reader)
     print('5',similadest_data)
@@ -156,13 +156,13 @@ def simlist4(request):
         except Tourmodel.DoesNotExist:
             pass
         
-    with open('similadest_data_list.json', 'w') as json_file:
+    with open('similadest_data_list.json', 'w', encoding='utf-8') as json_file:
         json.dump(similadest_data_list, json_file)
     print('6',similadest_data_list)
     return render(request, 'tourlist/simlist4.html', {'similadest_data_list': similadest_data_list})
 
 def simlist5(request):
-    with open('./similadest.csv', 'r') as csvfile:
+    with open('./similadest.csv', 'r', encoding='utf-8') as csvfile:
         csv_reader = csv.reader(csvfile)
         similadest_data = list(csv_reader)
     print('5',similadest_data)
@@ -181,7 +181,7 @@ def simlist5(request):
         except Tourmodel.DoesNotExist:
             pass
         
-    with open('similadest_data_list.json', 'w') as json_file:
+    with open('similadest_data_list.json', 'w', encoding='utf-8') as json_file:
         json.dump(similadest_data_list, json_file)
     print('6',similadest_data_list)
     return render(request, 'tourlist/simlist5.html', {'similadest_data_list': similadest_data_list})
@@ -189,7 +189,7 @@ def simlist5(request):
 
 
 def deslist1(request):
-    with open('./destination.csv', 'r') as csvfile:
+    with open('./destination.csv', 'r', encoding='utf-8') as csvfile:
         csv_reader = csv.reader(csvfile)
         destination_data = list(csv_reader)
     destination_data_list = []  
@@ -208,13 +208,13 @@ def deslist1(request):
         except Tourmodel.DoesNotExist:
             pass
 
-    with open('destination_data_list.json', 'w') as json_file:
+    with open('destination_data_list.json', 'w', encoding='utf-8') as json_file:
         json.dump(destination_data_list, json_file)
     print('7',destination_data_list)
     return render(request, 'tourlist/deslist1.html', {'destination_data_list': destination_data_list})
 
 def deslist2(request):
-    with open('./destination.csv', 'r') as csvfile:
+    with open('./destination.csv', 'r', encoding='utf-8') as csvfile:
         csv_reader = csv.reader(csvfile)
         destination_data = list(csv_reader)
     destination_data_list = []  
@@ -233,13 +233,13 @@ def deslist2(request):
         except Tourmodel.DoesNotExist:
             pass
 
-    with open('destination_data_list.json', 'w') as json_file:
+    with open('destination_data_list.json', 'w', encoding='utf-8') as json_file:
         json.dump(destination_data_list, json_file)
     print('7',destination_data_list)
     return render(request, 'tourlist/deslist2.html', {'destination_data_list': destination_data_list})
 
 def deslist3(request):
-    with open('./destination.csv', 'r') as csvfile:
+    with open('./destination.csv', 'r', encoding='utf-8') as csvfile:
         csv_reader = csv.reader(csvfile)
         destination_data = list(csv_reader)
     destination_data_list = []  
@@ -258,13 +258,13 @@ def deslist3(request):
         except Tourmodel.DoesNotExist:
             pass
 
-    with open('destination_data_list.json', 'w') as json_file:
+    with open('destination_data_list.json', 'w', encoding='utf-8') as json_file:
         json.dump(destination_data_list, json_file)
     print('7',destination_data_list)
     return render(request, 'tourlist/deslist3.html', {'destination_data_list': destination_data_list})
 
 def deslist4(request):
-    with open('./destination.csv', 'r') as csvfile:
+    with open('./destination.csv', 'r', encoding='utf-8') as csvfile:
         csv_reader = csv.reader(csvfile)
         destination_data = list(csv_reader)
     destination_data_list = []  
@@ -283,13 +283,13 @@ def deslist4(request):
         except Tourmodel.DoesNotExist:
             pass
 
-    with open('destination_data_list.json', 'w') as json_file:
+    with open('destination_data_list.json', 'w', encoding='utf-8') as json_file:
         json.dump(destination_data_list, json_file)
     print('7',destination_data_list)
     return render(request, 'tourlist/deslist4.html', {'destination_data_list': destination_data_list})
 
 def deslist5(request):
-    with open('./destination.csv', 'r') as csvfile:
+    with open('./destination.csv', 'r', encoding='utf-8') as csvfile:
         csv_reader = csv.reader(csvfile)
         destination_data = list(csv_reader)
     destination_data_list = []  
@@ -308,7 +308,7 @@ def deslist5(request):
         except Tourmodel.DoesNotExist:
             pass
 
-    with open('destination_data_list.json', 'w') as json_file:
+    with open('destination_data_list.json', 'w', encoding='utf-8') as json_file:
         json.dump(destination_data_list, json_file)
     print('7',destination_data_list)
     return render(request, 'tourlist/deslist5.html', {'destination_data_list': destination_data_list})
