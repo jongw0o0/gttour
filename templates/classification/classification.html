@@ -74,6 +74,10 @@
     <div class="hero">
 
         <div class="box">
+            <p>성별: {{ data.similadest_data.place_gender }}</p>
+            <p>연령대: {{ data.similadest_data.place_age }}</p>
+            <p>동반자유형: {{ data.similadest_data.place_family }}</p>
+            
     
         <a href="{% url 'tourlist:similadest_view'  %}">
             <button type="submit">

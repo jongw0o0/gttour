@@ -21,8 +21,8 @@ class Command(BaseCommand):
                     negative=row[3], 
                     image=row[4],  
                     tour_loc_1=row[5],
-                    tour_loc_2=row[5],
-                    tour_loc_3=row[5],
+                    tour_loc_2=row[6],
+                    tour_loc_3=row[7],
 
                 )
         self.stdout.write(self.style.SUCCESS('Data imported successfully'))
