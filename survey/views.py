@@ -53,7 +53,7 @@ def index(request):
 
 
             # print(survey_data) 
-            return redirect('waiting:Survey_simila_View')  # 저장 후 리다이렉트할 URL-html에서 작성
+            return redirect('waitting:Survey_simila_View')  # 저장 후 리다이렉트할 URL-html에서 작성
     
     else:
         form = SurveyForm()

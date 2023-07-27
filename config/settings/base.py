@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'gttour.apps.GttourConfig',
     'survey.apps.SurveyConfig',
-    'waiting.apps.WaitingConfig',
+    'waitting.apps.WaittingConfig',
     'classification.apps.ClassificationConfig',
     'tourlist.apps.TourlistConfig',
 ]

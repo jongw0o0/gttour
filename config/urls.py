@@ -24,7 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('gttour/', include('gttour.urls')),
     path('survey/', include('survey.urls')),
-    path('waiting/',  include('waiting.urls')),
+    path('waitting/',  include('waitting.urls')),
     path('classification/', include('classification.urls')),
     path('tourlist/', include('tourlist.urls')),
 ]
