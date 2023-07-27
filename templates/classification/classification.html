@@ -56,6 +56,11 @@
         margin-right: 20px;
         padding: 10px;
     }
+
+    .dis {
+        margin-top: 10px;
+        margin-bottom: 20px;
+    }
 </style>
 
 <div class="classification"><br>
@@ -65,8 +70,8 @@
             <a href="{% url 'tourlist:destination_view' %}">
                 <button type="submit"><h3>관심 장소</h3></button>
             </a>
+            <h6 class="dis" style="font-family: font1; text-align: center;">선택한 장소들과 유사한 장소 추천</h6>
             <ul>
-                <br>
                 {% for data_list in data.destination_data %}
                     <li>{{ data_list.0 }}</li>
                 {% endfor %}
@@ -76,8 +81,8 @@
             <a href="{% url 'tourlist:similadest_view' %}">
                 <button type="submit"><h3>유사 집단</h3></button>
             </a>
+            <h6 class="dis" style="font-family: font1; text-align: center;">성별 연령</h6>
             <ul>
-                <br>
                 {% for data_list in data.similadest_data %}
                     <li>{{ data_list.0 }}</li>
                 {% endfor %}

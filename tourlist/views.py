@@ -26,7 +26,7 @@ def similadest_view(request):
         
     with open('similadest_data_list.json', 'w', encoding='utf-8') as json_file:
         json.dump(similadest_data_list, json_file)
-    print('6',similadest_data_list)
+    # print('6',similadest_data_list)
     return render(request, 'tourlist/similadest.html', {'similadest_data_list': similadest_data_list})
 
 
@@ -50,9 +50,9 @@ def destination_view(request):
         except Tourmodel.DoesNotExist:
             pass
 
-    with open('destination_data_list.json', 'w', encoding='utf-8') as json_file:
+    with open('destination_data_list.json', 'w') as json_file:
         json.dump(destination_data_list, json_file)
-    print('7',destination_data_list)
+    # print('7',destination_data_list)
     return render(request, 'tourlist/destination.html', {'destination_data_list': destination_data_list})
 
 
