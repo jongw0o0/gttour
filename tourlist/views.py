@@ -1,7 +1,5 @@
 from django.shortcuts import render
 from .models import Tourmodel
-# from classification.views import index
-import csv
 import json
 
 def read_json_file(file_path):
