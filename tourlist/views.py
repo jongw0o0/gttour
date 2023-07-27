@@ -4,6 +4,23 @@ from .models import Tourmodel
 import csv
 import json
 
+def read_json_file(file_path):
+    with open(file_path, 'r', encoding='utf-8') as file:
+        data = json.load(file)
+    return data
+
+def surveydest_view(request):
+    
+    survey_data_file_path = './survey_data.json'
+    survey_data = read_json_file(survey_data_file_path)
+
+    data = {
+        'survey_data': survey_data, 
+    }
+
+    return render(request, 'tourlist/surveydest.html', {'data': data})
+
+
 def similadest_view(request):
     with open('./similadest.json', 'r', encoding='utf-8') as json_file:
         similadest_data = json.load(json_file)

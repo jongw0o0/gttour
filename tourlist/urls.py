@@ -8,6 +8,7 @@ urlpatterns = [
     # path('', views.index, name='index1'),
     path('similadest_view/', views.similadest_view, name='similadest_view'),
     path('destination_view/', views.destination_view, name='destination_view'),
+    path('surveydest_view/', views.surveydest_view, name='surveydest_view'),
 
     path('similadest_view/list1/', views.simlist1, name='simlist1'),
     path('similadest_view/list2/', views.simlist2, name='simlist2'),
