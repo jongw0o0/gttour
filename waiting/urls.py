@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 from .views import Survey_simila_View
 
-app_name = 'waiting'
+app_name = 'waitting'
 
 urlpatterns = [
     path('read_json_file/', views.read_json_file, name='read_json_file'),

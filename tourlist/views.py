@@ -90,7 +90,7 @@ def simlist1(request):
     with open('similadest_data_list.json', 'w', encoding='utf-8') as json_file:
         json.dump(similadest_data_list, json_file)
     # print('6',similadest_data_list)
-    return render(request, 'tourlist/simlist.html', {'similadest_data_list': similadest_data_list})
+    return render(request, 'tourlist/simlist1.html', {'similadest_data_list': similadest_data_list})
 
 def simlist2(request):
     with open('./similadest.json', 'r', encoding='utf-8') as json_file:

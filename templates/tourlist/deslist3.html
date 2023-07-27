@@ -32,81 +32,36 @@
     .main .hero p{
         font-size: 25px;
     }
-
-    .main .hero button{
-        background: none;
-        border: 2px solid skyblue;
-        color: black;
-        padding: 15px 20px;
-        border-radius: 20px;
-        margin-top: 30px;
-        outline: none;
-        cursor: pointer;
-        transition: all .4s;
-    }
-
-    .main .hero button:hover{
-        background-color: skyblue;
-        box-shadow: 3px 2px 5px 1px rgb(0 0 0 / 20%);
-    }
-
-    .hidden {
-        display: none;
-    }
-
-    .button-container {
-        display: flex;
-        flex-direction: row;
-        align-items: center; 
-        justify-content: center;
-    }
-
-    .button-container button {
-        margin-right: 20px;
-        padding: 5px 10px;
-    }
 </style>
 
 <div class="main">
     <div class="hero">
-        <h4 style="font-family: font1;">다음 목록은 {{ destination_data_list.2.location }} 여행 정보에요</h4><br>
+        <h4 style="font-family: font1; font-size: 35px;">다음 목록은 {{ destination_data_list.2.location }} 여행 정보에요</h4><br>
     
-        <div style="width:800px; height:450px; border:1px solid skyblue; border-radius: 20px; float:right; margin-right:20px;">
-            <div class="button-container">
-                <button type="button" onclick="showContent('imageContainer')" style="font-family: font3;"><h5>키워드맵</h5></button>
-                <button type="button" onclick="showContent('tourLocContainer')" style="font-family: font3;"><h5>관광지</h5></button>
-                <button type="button" onclick="showContent('positiveContainer')" style="font-family: font3;"><h5>긍정</h5></button>
-                <button type="button" onclick="showContent('negativeContainer')" style="font-family: font3;"><h5>부정</h5></button>
-            </div>
-            <div id="imageContainer" class="hidden">
+        <div style="width:1000px; height:500px; border:1px solid skyblue; border-radius: 20px; float:right; margin-right:20px;">
+            <div id="imageContainer" style="width:625px; height:500px; border-right:1px solid skyblue; float:left; margin-right:20px; font-family: font1;">
+                <h3>키워드맵:</h3>
                 {% if destination_data_list.2.image %}
-                    <img src="{{ destination_data_list.2.image }}" alt="{{ destination_data_list.2.location }}" style="max-width: 150px; max-height: 100px;">
+                    <img src="{{ destination_data_list.2.image }}" alt="{{ destination_data_list.2.location }}" style="max-width: 625px; max-height: 450px;">
                 {% else %}
                     <p>No image</p>
                 {% endif %}
             </div>
-            <div id="tourLocContainer" class="hidden">
-                <p>관광지: {{ destination_data_list.2.tour_loc }}</p>
-            </div>
-            <div id="positiveContainer" class="hidden">
-                <p>긍정: {{ destination_data_list.2.positive }}</p>
-            </div>
-            <div id="negativeContainer" class="hidden">
-                <p>부정: {{ destination_data_list.2.negative }}</p>
+
+            <div id="tourLocContainer" style="font-family: font1; font-size: 10px;">
+                <br><h3>관광지:</h3>
+                <p><a href="https://search.naver.com/search.naver?query={{ destination_data_list.0.tour_loc_1 }}" target="_blank" style="text-decoration: none; color: skyblue">{{ destination_data_list.2.tour_loc_1 }}</a></p>
+                <p><a href="https://search.naver.com/search.naver?query={{ destination_data_list.0.tour_loc_2 }}" target="_blank" style="text-decoration: none; color: skyblue">{{ destination_data_list.2.tour_loc_2 }}</a></p>
+                <p><a href="https://search.naver.com/search.naver?query={{ destination_data_list.0.tour_loc_3 }}" target="_blank" style="text-decoration: none; color: skyblue">{{ destination_data_list.2.tour_loc_3 }}</a></p>
+                <br>
+                <br>
+                <h3>긍정:</h3>
+                <p>{{ destination_data_list.2.positive }}</p>
+                <br>
+                <br>
+                <h3>부정:</h3>
+                <p>{{ destination_data_list.2.negative }}</p>
             </div>
     </div>
 </div>
-
-<script>
-    function showContent(containerId) {
-        // 모든 내용을 숨깁니다.
-        document.querySelectorAll('.hero > div > div').forEach(function(item) {
-            item.classList.add('hidden');
-        });
-
-        // 클릭한 버튼에 맞는 내용을 보여줍니다.
-        document.getElementById(containerId).classList.remove('hidden');
-    }
-</script>
-
 {% endblock %}
