@@ -17,7 +17,10 @@ def read_json_file(file_path):
 
 def recommend_areas(cluster_df, survey_data):
     # 문자열 표현의 average_vector를 실제 numpy 배열로 변환
-    cluster_df['average_vector'] = cluster_df['average_vector'].apply(lambda vector_str: np.array([float(num) for num in vector_str[1:-1].split()]))
+    try:
+        cluster_df['average_vector'] = cluster_df['average_vector'].apply(lambda vector_str: np.array([float(num) for num in vector_str[1:-1].split()]))
+    except:
+        pass
     similar_areas = pd.DataFrame()
     input_areas = []
     # JSON 파일의 각 지역에 대해
