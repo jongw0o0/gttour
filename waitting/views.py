@@ -20,6 +20,7 @@ def recommend_areas(cluster_df, survey_data):
     try:
         cluster_df['average_vector'] = cluster_df['average_vector'].apply(lambda vector_str: np.array([float(num) for num in vector_str[1:-1].split()]))
     except:
+        print(cluster_df['average_vector'])
         pass
     similar_areas = pd.DataFrame()
     input_areas = []
