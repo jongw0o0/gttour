@@ -67,12 +67,12 @@
 <meta charset="UTF-8">
 <div class="main">
     <div class="hero" style="width:1000px; height:500px">
-        <h2 style="font-family: font1;">다음 목록은 설문조사 관심지역이에요!</h2>
+        <h2 style="font-family: font1;">다음 목록은 설문조사에서 선택한 관심지역이에요!</h2>
         <h6 style="font-family: font1; font-size: 20px;">지역을 선택하세요!</h6><br>
         <div style="display: flex; font-size: 4px;">
-            <a href="{% url 'tourlist:deslist1' %}" class="link"><button type="submit" style="font-family: font3;"><h5>{{ data.survey_data.myarea_1 }}</h5></button></a>
-            <a href="{% url 'tourlist:deslist2' %}" class="link"><button type="submit" style="font-family: font3;"><h5>{{ data.survey_data.myarea_2 }}</h5></button></a>
-            <a href="{% url 'tourlist:deslist3' %}" class="link"><button type="submit" style="font-family: font3;"><h5>{{ data.survey_data.myarea_3 }}</h5></button></a>
+            <a href="{% url 'tourlist:surveylist1' %}" class="link"><button type="submit" style="font-family: font3;"><h5>{{ data.survey_data.myarea_1 }}</h5></button></a>
+            <a href="{% url 'tourlist:surveylist2' %}" class="link"><button type="submit" style="font-family: font3;"><h5>{{ data.survey_data.myarea_2 }}</h5></button></a>
+            <a href="{% url 'tourlist:surveylist3' %}" class="link"><button type="submit" style="font-family: font3;"><h5>{{ data.survey_data.myarea_3 }}</h5></button></a>
         </div>
     </div>
 </div>

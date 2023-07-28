@@ -18,6 +18,41 @@ def surveydest_view(request):
 
     return render(request, 'tourlist/surveydest.html', {'data': data})
 
+def surveylist1(request):
+    
+    survey_data_file_path = './survey_data.json'
+    survey_data = read_json_file(survey_data_file_path)
+
+    data = {
+        'survey_data': survey_data, 
+    }
+
+    return render(request, 'tourlist/surveylist1.html', {'data': data})
+
+def surveylist2(request):
+    
+    survey_data_file_path = './survey_data.json'
+    survey_data = read_json_file(survey_data_file_path)
+
+    data = {
+        'survey_data': survey_data, 
+    }
+
+    return render(request, 'tourlist/surveylist2.html', {'data': data})
+
+def surveylist3(request):
+    
+    survey_data_file_path = './survey_data.json'
+    survey_data = read_json_file(survey_data_file_path)
+
+    data = {
+        'survey_data': survey_data, 
+    }
+
+    return render(request, 'tourlist/surveylist3.html', {'data': data})
+
+
+
 
 def similadest_view(request):
     with open('./similadest.json', 'r', encoding='utf-8') as json_file:
@@ -46,6 +81,7 @@ def similadest_view(request):
         json.dump(similadest_data_list, json_file)
     # print('6',similadest_data_list)
     return render(request, 'tourlist/similadest.html', {'similadest_data_list': similadest_data_list})
+
 
 
 def destination_view(request):

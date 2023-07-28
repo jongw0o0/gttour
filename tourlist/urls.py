@@ -21,5 +21,9 @@ urlpatterns = [
     path('destination_view/list3/', views.deslist3, name='deslist3'),
     path('destination_view/list4/', views.deslist4, name='deslist4'),
     path('destination_view/list5/', views.deslist5, name='deslist5'),
+
+    path('surveydest_view/list1/', views.surveylist1, name='surveylist1'),
+    path('surveydest_view/list2/', views.surveylist2, name='surveylist2'),
+    path('surveydest_view/list3/', views.surveylist3, name='surveylist3'),
     # 상세정보 url 필요할듯
 ]
